@@ -10,3 +10,5 @@ def flip_coin_raitio(N):
             front+=1
 
     return front*1.0/N
+
+print(flip_coin_raitio(100))
