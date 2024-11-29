@@ -25,18 +25,18 @@ def raitio(N):
             five += 1
         elif randomint_num == 6:
             six += 1
-            
-        one_raitio = float(one)/N
-        two_raitio = float(two)/N
-        three_raitio = float(three)/N
-        four_raitio = float(four)/N
-        five_raitio = float(five)/N
-        six_raitio = float(six)/N
 
-        return [one_raitio, two_raitio, three_raitio, four_raitio, five_raitio, six_raitio]
+    one_raitio = float(one)/N
+    two_raitio = float(two)/N
+    three_raitio = float(three)/N
+    four_raitio = float(four)/N
+    five_raitio = float(five)/N
+    six_raitio = float(six)/N
+
+    return [one_raitio, two_raitio, three_raitio, four_raitio, five_raitio, six_raitio]
 
 #x = [1 , 2, 3, 4, 8, 10, 20, 40, 80, 160, 1000, 5000,10000,100000000]
-x = arange(6, 300, 6)
+x = arange(6, 3000, 6)
 Y_1 = []
 Y_2 = []
 Y_3 = []
