@@ -36,13 +36,16 @@ for N in x:
 print(x)
 
 Z = [0.333]*len(x)
+B = [0.667]*len(x)
 
 print(Z)
 
 plt.figure(figsize=(8, 5))
 plt.plot(x, Y_1_3, color='blue', linewidth=2 , marker="o")
-plt.plot(x, Y_2_4_5_6, color='yellow', linewidth=2 , marker="o")
+plt.plot(x, Y_2_4_5_6, color='GREEN', linewidth=2 , marker="o")
 plt.plot(x, Z, color='red', linestyle='-') # 画一条标准0.5的线
+plt.plot(x, B, color='red', linestyle='-') # 画一条标准0.667的线
+
 plt.grid(True)
 plt.show()
 
