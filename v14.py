@@ -27,16 +27,9 @@ def flip_coin_raitio(N):
 #ydq=赢的钱,sdq=输的钱
 ydq,sdq= flip_coin_raitio(bj)
 
-if ydq > sdq:
-    print('盈利:',ydq-sdq)
-    #期望值
-    print('平均每次盈利',(ydq-sdq)/bj)
-else:
-    print('亏损:',sdq-ydq)
-    #期望值
-    print('平均每次亏损',(sdq-ydq)/bj)
+print('利润:',ydq-sdq)
 
 print(ydq)
 print(sdq)
 llpdq = 0.1* bj
-print('理论亏',llpdq)
+print('理论亏',0.5*0.9+0.5*(-1))
