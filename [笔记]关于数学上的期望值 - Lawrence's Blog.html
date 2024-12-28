@@ -1,0 +1,1657 @@
+<!DOCTYPE HTML>
+<html class="small-scroll-bar no-js bg cool-transparent" lang="zh-cmn-Hans">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta charset="UTF-8">
+    <!--IE 8浏览器的页面渲染方式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!--默认使用极速内核：针对国内浏览器产商-->
+    <meta name="renderer" content="webkit">
+    <!--chrome Android 地址栏颜色-->
+    <meta name="theme-color" content="#27c24c"/>
+<!--    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">-->
+<!--    <meta name="mobile-web-app-capable" content="yes">-->
+<!--    <meta name="apple-mobile-web-app-capable" content="yes">-->
+<!--    <meta name="apple-mobile-web-app-status-bar-style" content="default">-->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <title>【离线版本_offline_ver】记]关于数学上的期望值 - Lawrence's Blog</title>
+            <link rel="icon" type="image/ico" href="/favicon.ico">
+        <meta name="description" content="这篇文章依旧是根据爸爸的要求拟写关于期望值：期望值是一个统计学的关系，比较难懂。我们可以用期望值来计算理论上的收益/亏损公式的推倒过程：p(1)代表概率，那么我们抛到1的次数就是 N（次数）*p..." />
+<meta name="generator" content="Typecho 1.2.1" />
+<meta name="template" content="handsome" />
+<link rel="pingback" href="https://blog.lawrenceshi.space/index.php/action/xmlrpc" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://blog.lawrenceshi.space/index.php/action/xmlrpc?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://blog.lawrenceshi.space/index.php/action/xmlrpc?wlw" />
+<link rel="alternate" type="application/rss+xml" title="[笔记]关于数学上的期望值 &raquo; Lawrence's Blog &raquo; RSS 2.0" href="https://blog.lawrenceshi.space/index.php/feed/archives/111/" />
+<link rel="alternate" type="application/rdf+xml" title="[笔记]关于数学上的期望值 &raquo; Lawrence's Blog &raquo; RSS 1.0" href="https://blog.lawrenceshi.space/index.php/feed/rss/archives/111/" />
+<link rel="alternate" type="application/atom+xml" title="[笔记]关于数学上的期望值 &raquo; Lawrence's Blog &raquo; ATOM 1.0" href="https://blog.lawrenceshi.space/index.php/feed/atom/archives/111/" />
+<script src='https://blog.lawrenceshi.space/usr/plugins/FontLibs/static//css/css.php?type=2&path=https://cdn.xxhzm.cn/FontLIbs/'></script>
+
+    
+    <script type="text/javascript">
+
+        window['LocalConst'] = {
+            //base
+            BASE_SCRIPT_URL: 'https://blog.lawrenceshi.space/usr/themes/handsome/',
+            BLOG_URL: 'https://blog.lawrenceshi.space/',
+            BLOG_URL_N: 'https://blog.lawrenceshi.space',
+            STATIC_PATH: 'https://blog.lawrenceshi.space/usr/themes/handsome/assets/',
+            BLOG_URL_PHP: 'https://blog.lawrenceshi.space/index.php/',
+            VDITOR_CDN: 'https://cdn.jsdelivr.net/npm/vditor@3.9.4',
+            ECHART_CDN: 'https://lf6-cdn-tos.bytecdntp.com/cdn/expire-5-y/echarts/4.5.0',
+            HIGHLIGHT_CDN: 'https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/highlight.js/10.7.3',
+
+            MATHJAX_SVG_CDN: 'https://cdnjs.loli.net/ajax/libs/mathjax/3.1.2/es5/tex-mml-chtml.min.js',
+            THEME_VERSION: '9.2.120230801501',
+            THEME_VERSION_PRO: '9.2.1',
+            DEBUG_MODE: '0',
+
+            //comment
+            COMMENT_NAME_INFO: '必须填写昵称或姓名',
+            COMMENT_EMAIL_INFO: '必须填写电子邮箱地址',
+            COMMENT_URL_INFO: '必须填写网站或者博客地址',
+            COMMENT_EMAIL_LEGAL_INFO: '邮箱地址不合法',
+            COMMENT_URL_LEGAL_INFO: '网站或者博客地址不合法',
+            COMMENT_CONTENT_INFO: '必须填写评论内容',
+            COMMENT_SUBMIT_ERROR: '提交失败，请重试！',
+            COMMENT_CONTENT_LEGAL_INFO: '无法获取当前评论(评论已复制到剪切板)，可能原因如下：',
+            COMMENT_NOT_IN_FIRST_PAGE:'尝试请前往评论第一页查看',
+            COMMENT_NOT_BELONG_CURRENT_TAG:'当前评论不属于该标签，请关闭标签筛选后查看',
+            COMMENT_NO_EMAIL:'如果没有填写邮箱则进入审核队列',
+            COMMENT_PAGE_CACHED:'页面如果被缓存无法显示最新评论',
+            COMMENT_BLOCKED:'评论可能被拦截且无反馈信息',
+            COMMENT_AJAX_ERROR:'评论请求失败',
+            COMMENT_TITLE: '评论通知',
+            STAR_SUCCESS:'点赞成功',
+            STAR_REPEAT:'您已点赞',
+            STAR_ERROR_NETWORK:'点赞请求失败',
+            STAR_ERROR_CODE:'点赞返回未知错误码',
+            COOKIE_PREFIX: '9da8511e616fa03525575757f8c75566',
+            COOKIE_PATH: '/',
+
+            //login
+            LOGIN_TITLE: '登录通知',
+            REGISTER_TITLE: '注册通知',
+            LOGIN_USERNAME_INFO: '必须填写用户名',
+            LOGIN_PASSWORD_INFO: '请填写密码',
+            REGISTER_MAIL_INFO: '请填写邮箱地址',
+            LOGIN_SUBMIT_ERROR: '登录失败，请重新登录',
+            REGISTER_SUBMIT_ERROR: '注册失败，请稍后重试',
+            LOGIN_SUBMIT_INFO: '用户名或者密码错误，请重试',
+            LOGIN_SUBMIT_SUCCESS: '登录成功',
+            REGISTER_SUBMIT_SUCCESS: '注册成功，您的密码是：',
+            CLICK_TO_REFRESH: '点击以刷新页面',
+            PASSWORD_CHANGE_TIP: '初始密码仅显示一次，可在管理后台修改密码',
+            LOGOUT_SUCCESS_REFRESH: '退出成功，正在刷新当前页面',
+
+            LOGOUT_ERROR: '退出失败，请重试',
+            LOGOUT_SUCCESS: '退出成功',
+            SUBMIT_PASSWORD_INFO: '密码错误，请重试',
+            SUBMIT_TIME_MACHINE:'发表新鲜事',
+            REPLY_TIME_MACHINE:'回应',
+
+            //comment
+            ChANGYAN_APP_KEY: '',
+            CHANGYAN_CONF: '',
+
+            COMMENT_SYSTEM: '0',
+            COMMENT_SYSTEM_ROOT: '0',
+            COMMENT_SYSTEM_CHANGYAN: '1',
+            COMMENT_SYSTEM_OTHERS: '2',
+            EMOJI: '表情',
+            COMMENT_NEED_EMAIL: '1',
+            COMMENT_NEED_URL: '1',
+            COMMENT_REJECT_PLACEHOLDER: '居然什么也不说，哼',
+            COMMENT_PLACEHOLDER: '说点什么吧……',
+
+            //pjax
+            IS_PJAX: '1',
+            IS_PAJX_COMMENT: '1',
+            PJAX_ANIMATE: 'default',
+            PJAX_TO_TOP: 'auto',
+            TO_TOP_SPEED: '100',
+
+
+            USER_COMPLETED: {"data":""},
+            VDITOR_COMPLETED: {"data":""},
+
+            //ui
+            OPERATION_NOTICE: '操作通知',
+            SCREENSHOT_BEGIN: '正在生成当前页面截图……',
+            SCREENSHOT_NOTICE: '点击顶部下载按钮保存当前卡片',
+            SCREENSHORT_ERROR: '由于图片跨域原因导致截图失败',
+            SCREENSHORT_SUCCESS: '截图成功',
+
+            //music
+            MUSIC_NOTICE: '播放通知',
+            MUSIC_FAILE: '当前音乐地址无效，自动为您播放下一首',
+            MUSIC_FAILE_END: '当前音乐地址无效',
+            MUSIC_LIST_SUCCESS: '歌单歌曲加载成功',
+            MUSIC_AUTO_PLAY_NOTICE:"即将自动播放，点击<a class='stopMusic'>停止播放</a>",
+            MUSIC_API: 'https://blog.lawrenceshi.space/index.php/action/handsome-meting-api?server=:server&type=:type&id=:id&auth=:auth&r=:r',
+            MUSIC_API_PARSE: 'https://blog.lawrenceshi.space/index.php/action/handsome-meting-api?do=parse',
+
+            //tag
+            EDIT:'编辑',
+            DELETE:'删除',
+            OPERATION_CONFIRMED:'确认',
+            OPERATION_CANCELED:'取消',
+
+            TAG_EDIT_TITLE: '编辑提示',
+            TAG_EDIT_DESC: '请输入修改后的标签名称（如果输入标签名称已存在，则会合并这两个标签）：',
+            TAG_DELETE_TITLE: '删除提示',
+            TAG_DELETE_DESC: '确认要删除该标签吗，删除该标签的同时会删除与该标签绑定的评论列表',
+
+            CROSS_DELETE_DESC:'确认删除该条时光机吗？将无法恢复',
+
+
+            //option
+            TOC_TITLE: '文章目录',
+            HEADER_FIX: '固定头部',
+            ASIDE_FIX: '固定导航',
+            ASIDE_FOLDED: '折叠导航',
+            ASIDE_DOCK: '置顶导航',
+            CONTAINER_BOX: '盒子模型',
+            DARK_MODE: '深色模式',
+            DARK_MODE_AUTO: '深色模式（自动）',
+            DARK_MODE_FIXED: '深色模式（固定）',
+            EDITOR_CHOICE: 'origin',
+            NO_LINK_ICO:'',
+            NO_SHOW_RIGHT_SIDE_IN_POST: '',
+
+            CDN_NAME: 'ALIOSS',
+            LAZY_LOAD: '',
+            PAGE_ANIMATE: '1',
+            THEME_COLOR: '14',
+            THEME_COLOR_EDIT: 'success-info-dark',
+            THEME_HEADER_FIX: '1',
+            THEME_ASIDE_FIX: '1',
+            THEME_ASIDE_FOLDED: '',
+            THEME_ASIDE_DOCK: '',
+            THEME_CONTAINER_BOX: '1',
+            THEME_HIGHLIGHT_CODE: '1',
+            THEME_TOC: '1',
+            THEME_DARK_MODE: 'auto',
+
+            THEME_DARK_MODE_VALUE: 'auto',
+            SHOW_SETTING_BUTTON: '1',
+
+            THEME_DARK_HOUR: '18',
+            THEME_LIGHT_HOUR: '6',
+            THUMB_STYLE: 'normal',
+            AUTO_READ_MODE: '',
+            SHOW_LYRIC:'',
+            AUTO_SHOW_LYRIC:'1',
+            //代码高亮
+            CODE_STYLE_LIGHT: 'github',
+            CODE_STYLE_DARK: 'mac_dark',
+            THEME_POST_CONTENT:'2',
+            //other
+            OFF_SCROLL_HEIGHT: '55',
+            SHOW_IMAGE_ALT: '1',
+            USER_LOGIN: '',
+            USE_CACHE: '',
+            POST_SPEECH: '1',
+            POST_MATHJAX: '',
+            SHOW_FOOTER:'1',
+            IS_TRANSPARENT:'1',
+            LOADING_IMG:'',
+            PLUGIN_READY:'1',
+            PLUGIN_URL:'https://blog.lawrenceshi.space/usr/plugins',
+            FIRST_SCREEN_ANIMATE:'',
+            RENDER_LANG:'zh_CN',
+            SERVICE_WORKER_INSTALLED:false,
+            CLOSE_LEFT_RESIZE:'',
+            CLOSE_RIGHT_RESIZE:'',
+            CALENDAR_GITHUB:'',
+            LATEST_POST_TIME:'1735104472',
+            LATEST_TIME_COMMENT_TIME:'1735104443',
+            LEFT_LOCATION: '1',
+
+            INPUT_NEW_TAG:'输入结束后加空格创建新标签'
+        };
+
+        function clearCache(needRefresh = false) {
+            window.caches && caches.keys && caches.keys().then(function (keys) {
+                keys.forEach(function (key) {
+                    console.log("delete cache",key);
+                    caches.delete(key);
+                    if (needRefresh){
+                        window.location.reload();
+                    }
+                });
+            });
+        }
+
+        function unregisterSW() {
+            navigator.serviceWorker.getRegistrations()
+                .then(function (registrations) {
+                    for (var index in registrations) {
+                        // 清除缓存
+                        registrations[index].unregister();
+                    }
+                });
+        }
+
+        function registerSW() {
+            navigator.serviceWorker.register(LocalConst.BLOG_URL + 'sw.min.js?v=9.2.120230801501')
+                .then(function (reg) {
+                    if (reg.active){
+                        LocalConst.SERVICE_WORKER_INSTALLED = true;
+                    }
+                }).catch(function (error) {
+                console.log('cache failed with ' + error); // registration failed
+            });
+        }
+
+        if ('serviceWorker' in navigator) {
+            const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+            if (LocalConst.USE_CACHE && !isSafari) {//safari的sw兼容性较差目前关闭
+                registerSW();
+            } else {
+                unregisterSW();
+                clearCache();
+            }
+        }
+    </script>
+
+    <!-- 第三方CDN加载CSS -->
+    <link href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/twitter-bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- 本地css静态资源 -->
+
+        <link rel="stylesheet" href="https://blog.lawrenceshi.space/usr/themes/handsome/assets/css/origin/function.min.css?v=9.2.120230801501" type="text/css"/>
+    <link rel="stylesheet"
+          href="https://blog.lawrenceshi.space/usr/themes/handsome/assets/css/handsome.min.css?v=9.2.120230801501"
+          type="text/css"/>
+
+        
+    
+    <!--主题组件css文件加载-->
+            <link id="cool_opacity" rel="stylesheet"
+              href="https://blog.lawrenceshi.space/usr/themes/handsome/assets/css/features/coolopacity.min.css"
+              type="text/css"/>
+
+                    <style>
+                .cool-transparent .app:before {
+                    background-color: rgba(0, 55, 14, 0.53) !important;
+                }
+
+                                @supports (-webkit-backdrop-filter:none) or (backdrop-filter:none) {
+                    #footer{
+                        -webkit-backdrop-filter: blur(5px);
+                        backdrop-filter: blur(5px);
+                    }
+                    .right_panel.panel{
+                        background-color: rgba(255, 255, 255, 0.3);
+                        -webkit-backdrop-filter: blur(5px);
+                        backdrop-filter: blur(5px);
+                    }
+
+                    .app-aside-fix #aside #left_footer{
+                        -webkit-backdrop-filter: blur(5px);
+                        backdrop-filter: blur(5px);
+                    }
+                    .modal-content{
+                        background: rgba(0,0,0, 0.14);
+                        -webkit-backdrop-filter: blur(5px);
+                        backdrop-filter: blur(5px);
+                    }
+
+                    @media (max-width: 767px) {
+                        /*.navbar-collapse{*/
+                        /*    -webkit-backdrop-filter: blur(5px);*/
+                        /*    backdrop-filter: blur(5px);*/
+                        /*}*/
+                        #handsome_global_player .aplayer-lrc{
+                            /*bottom: -60vh;*/
+                        }
+                        #header{
+                            -webkit-backdrop-filter: blur(5px);
+                            backdrop-filter: blur(5px);
+                        }
+                    }
+                    @media (min-width: 767px) {
+                        #handsome_global_player .aplayer-list{
+                            background: rgba(0,0,0, 0.14);
+                            -webkit-backdrop-filter: blur(5px);
+                            backdrop-filter: blur(5px);
+                            color: #fff;
+                        }
+
+                        .dropdown-menu {
+                            background: rgba(0,0,0, 0.14);
+                            -webkit-backdrop-filter: blur(5px);
+                            backdrop-filter: blur(5px);
+                        }
+
+                        .app-aside-dock .app-aside .navi > ul > li .nav-sub{
+                            background: rgba(0,0,0, 0.14);
+                            -webkit-backdrop-filter: blur(5px);
+                            backdrop-filter: blur(5px);
+                        }
+                    }
+                }
+
+                
+            </style>
+            
+    <!--引入英文字体文件-->
+    
+    <style type="text/css">
+        
+        html.bg {
+                    background-image:
+                           -moz-radial-gradient(0% 100%, ellipse cover, #96DEDA 10%,rgba(255,255,227,0) 40%),
+                           -moz-linear-gradient(-45deg,  #1fddff 0%,#FFEDBC 100%)
+                           ;
+            background-image:
+                           -o-radial-gradient(0% 100%, ellipse cover, #96DEDA 10%,rgba(255,255,227,0) 40%),
+                           -o-linear-gradient(-45deg,  #1fddff 0%,#FFEDBC 100%)
+                           ;
+            background-image:
+                           -ms-radial-gradient(0% 100%, ellipse cover, #96DEDA 10%,rgba(255,255,227,0) 40%),
+                           -ms-linear-gradient(-45deg,  #1fddff 0%,#FFEDBC 100%)
+                           ;
+            background-image:
+                           -webkit-radial-gradient(0% 100%, ellipse cover, #96DEDA    10%,rgba(255,255,227,0) 40%),
+                           -webkit-linear-gradient(-45deg,  #1fddff 0%,#FFEDBC 100%)
+                           ;
+        }
+        .cool-transparent .off-screen+#content {
+                    background-image:
+                           -moz-radial-gradient(0% 100%, ellipse cover, #96DEDA 10%,rgba(255,255,227,0) 40%),
+                           -moz-linear-gradient(-45deg,  #1fddff 0%,#FFEDBC 100%)
+                           ;
+            background-image:
+                           -o-radial-gradient(0% 100%, ellipse cover, #96DEDA 10%,rgba(255,255,227,0) 40%),
+                           -o-linear-gradient(-45deg,  #1fddff 0%,#FFEDBC 100%)
+                           ;
+            background-image:
+                           -ms-radial-gradient(0% 100%, ellipse cover, #96DEDA 10%,rgba(255,255,227,0) 40%),
+                           -ms-linear-gradient(-45deg,  #1fddff 0%,#FFEDBC 100%)
+                           ;
+            background-image:
+                           -webkit-radial-gradient(0% 100%, ellipse cover, #96DEDA    10%,rgba(255,255,227,0) 40%),
+                           -webkit-linear-gradient(-45deg,  #1fddff 0%,#FFEDBC 100%)
+                           ;
+        }
+@media (max-width:767px){
+    html.bg {
+        
+        }
+        .cool-transparent .off-screen+#content {
+        
+        }
+}
+#aside .wrapper:hover {
+	background: url(https://blog.lawrenceshi.space/usr/themes/handsome/assets/img/snow.gif);
+	background-size: cover;
+	color: #999;
+}    </style>
+
+    <!--全站jquery-->
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        if (LocalConst.USE_CACHE && !window.jQuery){
+            console.log("jQuery is Bad",document.cookie.indexOf("error_cache_refresh"));
+            if (document.cookie && document.cookie.indexOf("error_cache_refresh")===-1){//半个小时内没有刷新过
+                console.log("jQuery is Bad，we need clear cache,retry refresh");
+                document.cookie = "error_cache_refresh=1;max-age=1800;path=/";
+                clearCache(true);
+                if ('serviceWorker' in navigator) {
+                    //todo 尝试注销sw后再启用sw
+                }
+            }
+        }
+    </script>
+    <!--网站统计代码-->
+    
+
+</head>
+
+<body id="body" class="fix-padding skt-loading">
+
+	<!-- aside -->
+	  
+  <div id="alllayout" class="app app-aside-fix container app-header-fixed ">  <!-- headnav -->
+  <header id="header" class="app-header navbar box-shadow-bottom-lg fix-padding" role="menu">
+    <!-- navbar header（交集处） -->
+    <div id="header_left" class="text-ellipsis navbar-header bg-success">
+    <button class="pull-right visible-xs" ui-toggle-class="show animated animated-lento fadeIn" target=".navbar-collapse">
+        <span class="menu-icons"><i data-feather="search"></i></span>
+    </button>
+    <button class="pull-left visible-xs" ui-toggle-class="off-screen animated" target=".app-aside" ui-scroll="app">
+        <span class="menu-icons"><i data-feather="menu"></i></span>
+    </button>
+    <!-- brand -->
+    <a href="https://blog.lawrenceshi.space/" class="navbar-brand text-lt">
+        <span id="navbar-brand-day">
+                                                <i class="fontello fontello-chevron-right"></i>                            <span class="hidden-folded m-l-xs">Lawrence's blog</span>
+                    </span>
+            </a>
+    <!-- / brand -->
+    </div>
+    <!-- / navbar header -->
+
+    <!-- navbar collapse（顶部导航栏） -->
+    <div id="header_right" class="collapse pos-rlt navbar-collapse bg-info">
+    <!-- statitic info-->
+        <ul class="nav navbar-nav hidden-sm">
+        <li class="dropdown pos-stc">
+            <a id="statistic_pane" data-status="false" href="#" data-toggle="dropdown" class="dropdown-toggle feathericons dropdown-toggle"
+               aria-expanded="false">
+                <i data-feather="pie-chart"></i>
+                <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu wrapper w-full bg-white">
+                <div class="row">
+                    <div class="col-sm-8 b-l b-light">
+                        <div class="m-l-xs m-t-xs  font-bold">动态日历                        </div>
+                        <div class="text-muted m-l-xs " style="font-size: 12px">统计近10个月的博主文章和评论数目</div>
+                        <div class="text-center">
+                            <nav class="loading-echart text-center m-t-lg m-b-lg">
+                                <p class="infinite-scroll-request"><i class="animate-spin fontello fontello-refresh"></i>Loading...</p>
+                            </nav>
+                            <div id="post-calendar" class="top-echart hide"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 b-l b-light">
+                        <div class="m-l-xs m-t-xs m-b-sm font-bold">分类雷达图</div>
+                        <div class="text-center">
+                            <nav class="loading-echart text-center m-t-lg m-b-lg">
+                                <p class="infinite-scroll-request"><i class="animate-spin fontello fontello-refresh"></i>Loading...</p>
+                            </nav>
+                            <div id="category-radar" class="top-echart hide"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 b-l b-light">
+                        <div class="m-l-xs m-t-xs m-b-sm font-bold">发布统计图</div>
+                        <div class="text-center">
+                            <nav class="loading-echart text-center m-t-lg m-b-lg">
+                                <p class="infinite-scroll-request"><i class="animate-spin fontello fontello-refresh"></i>Loading...</p>
+                            </nav>
+                            <div id="posts-chart" class="top-echart hide"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 b-l b-light">
+                        <div class="m-l-xs m-t-xs m-b-sm font-bold">分类统计图</div>
+                        <div class="text-center">
+                            <nav class="loading-echart text-center m-t-lg m-b-lg">
+                                <p class="infinite-scroll-request"><i class="animate-spin fontello fontello-refresh"></i>Loading...</p>
+                            </nav>
+                            <div id="categories-chart" class="top-echart hide"></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 b-l b-light">
+                        <div class="m-l-xs m-t-xs m-b-sm font-bold">标签统计图</div>
+                        <div class="text-center">
+                            <nav class="loading-echart text-center m-t-lg m-b-lg">
+                                <p class="infinite-scroll-request"><i class="animate-spin fontello fontello-refresh"></i>Loading...</p>
+                            </nav>
+                            <div id="tags-chart" class="top-echart hide"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    
+    <!-- search form -->
+
+    <form id="searchform1" class="searchform navbar-form navbar-form-sm navbar-left shift" method="post"
+          role="search">
+        <div class="form-group">
+            <div class="input-group rounded bg-white-pure box-shadow-wrap-normal">
+                <input  autocomplete="off" id="search_input" type="search" name="s" class="transparent rounded form-control input-sm no-borders padder" required placeholder="搜索（Ctrl + K）">
+                <!--搜索提示-->
+                <ul id="search_tips_drop" class="search_modal_list overflow-y-auto small-scroll-bar dropdown-menu hide" style="display:
+                 block;top:
+                30px; left: 0px;">
+                </ul>
+                <span id="search_submit" class="transparent input-group-btn">
+                  <button  type="submit" class="transparent btn btn-sm">
+                      <span class="feathericons icon-search"><i data-feather="search"></i></span>
+                      <span class="feathericons animate-spin  hide spin-search"><i
+                                  data-feather="loader"></i></span>
+                  </button>
+              </span>
+            </div>
+            <a class="btn btn-sm  btn-icon open_search_modal_mobile"><i data-feather="external-link"></i></a>
+        </div>
+    </form>
+    <a href="" style="display: none" id="searchUrl"></a>
+    <!-- / search form -->
+        <ul class="nav navbar-nav navbar-right">
+                    <li class="music-box hidden-xs hidden-sm" id="handsome_global_player">
+                <div class='handsome_aplayer player-global' data-preload="false" data-autoplay="false" data-listMaxHeight="200px" data-order="random" data-theme="#8ea9a7" data-listFolded="true" data-fix_position="true" data-i_autoplay="">
+<div class="handsomePlayer-tip-loading"><span></span> <span></span> <span></span> <span></span><span></span></div><div class="handsome_aplayer_music" data-id="9222787167" data-server="tencent" data-type="playlist" data-auth="a07512d69b3f0c394dff8febf0fea0af"></div>
+</div>
+            </li>
+            <li class="dropdown hidden-xs hidden-sm"><a id="global_player_toggle" class="skPlayer-list-switch dropdown-toggle
+            feathericons"><i
+                            data-feather="disc"></i><span class="visible-xs-inline"></span></a></li>
+                <li class="dropdown"><a target="_self" href="https://www.travellings.cn/go.html" class="feathericons dropdown-toggle" ><i class="icon-emoji">🚇</i><span class="visible-xs-inline">Travelling</span></a></li>                    <!--闲言碎语-->
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="feathericons dropdown-toggle">
+                    <i data-feather="twitch"></i>
+                    <span class="visible-xs-inline">
+              时光机              </span>
+                    <span class="badge badge-sm up bg-danger pull-right-xs notify_talk">新</span>
+                </a>
+                <!-- dropdown -->
+                <div id="small-talk" class="dropdown-menu w-xl animated fadeInUp">
+                    <div class="panel bg-white">
+                        <div class="panel-heading b-light bg-white">
+                            <strong>
+                                <span class="nav-icon"><i data-feather="instagram"></i></span>
+                                时光机                            </strong>
+                        </div>
+                        <div class="list-group" id="smallRecording">
+                            <a href="https://blog.lawrenceshi.space/index.php/cross.html" class="list-group-item"><span class="clear block m-b-none words_contents">今天是我生日！<br><small class="text-muted">November 27th, 2024 at 06:47 am</small></span></a><a href="https://blog.lawrenceshi.space/index.php/cross.html" class="list-group-item"><span class="clear block m-b-none words_contents">妈妈拖着一直不给我发我的照片，我现在在找他要<br><small class="text-muted">November 17th, 2024 at 02:45 pm</small></span></a><a href="https://blog.lawrenceshi.space/index.php/cross.html" class="list-group-item"><span class="clear block m-b-none words_contents">证明一下我还活着OωO<br><small class="text-muted">October 20th, 2024 at 03:40 pm</small></span></a>                        </div>
+                    </div>
+                </div>
+            </li>
+            <!--/闲言碎语-->
+                            <!--登录管理-->
+            <li class="dropdown" id="easyLogin">
+                <a onclick="return false" data-toggle="dropdown" class="dropdown-toggle clear" data-toggle="dropdown">
+                                            <span class="feathericons"><i data-feather="key"></i></span>
+                                        <b class="caret"></b><!--下三角符号-->
+                </a>
+                <!-- dropdown(已经登录) -->
+                                    <div class="dropdown-menu w-lg wrapper bg-white animated fadeIn" aria-labelledby="navbar-login-dropdown" id="user_panel">
+
+                        <div class="tab-container post_tab" data-stopPropagation="true">
+                            
+                            <div class="tab-content no-border">
+                                <div role="tabpanel" id="login_container" class="tab-pane fade active in">
+                                    <form id="login_form" action="https://blog.lawrenceshi.space/index.php/action/login?_=4f76fc5cb35215b28ad329203f33db20" method="post">
+                                        <div class="form-group">
+                                            <label for="navbar-login-user">用户名</label>
+                                            <input type="text" name="name" id="navbar-login-user" class="form-control" placeholder="用户名或电子邮箱"></div>
+                                        <div class="form-group">
+                                            <label for="navbar-login-password">密码</label>
+                                            <input autocomplete type="password" name="password" id="navbar-login-password"
+                                                   class="form-control" placeholder="密码"></div>
+                                        <button style="width: 100%" type="submit"  class="user_op_submit btn-rounded box-shadow-wrap-lg btn-gd-primary padder-lg">
+                                            <span>登录</span>
+                                            <span class="text-active">登录中...</span>
+                                            <i class="animate-spin  fontello fontello-spinner hide"></i>
+                                        </button>
+
+                                        <input type="hidden" name="referer" value="https://blog.lawrenceshi.space/"></form>
+                                </div>
+
+                                                            </div>
+                        </div>
+                    </div>
+                            </li>
+            <!--/登录管理-->
+            </ul>
+    </div>
+    <!-- / navbar collapse -->
+</header>
+  <div id="search_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"> 
+   <div class="modal-dialog modal-lg" role="document"> 
+    <div class="modal-content box-shadow-wrap-lg"> 
+     <div class="modal-header"> 
+        <div class="form-group">
+            <div class="input-group box-shadow-wrap-normal slight-border">
+                <input  autocomplete="off" id="search_modal_input" type="search" name="s" class="transparent form-control input-sm padder" required placeholder="输入关键词搜索…">
+                <!--搜索提示-->
+                
+                <span id="search_modal_submit" class="transparent input-group-btn">
+                  <button  type="submit" class="transparent btn btn-sm">
+                      <span class="feathericons icon-search"><i data-feather="search"></i></span>
+                      <span class="feathericons animate-spin  hide spin-search"><i
+                                  data-feather="loader"></i></span>
+                  </button>
+              </span>
+            </div>
+        </div>      
+     </div> 
+     <div class="modal-body"> 
+      <div class="tab-container post_tab"> 
+       <ul class="nav no-padder b-b scroll-hide" role="tablist"> 
+        <li class="nav-item active" role="presentation"><a class="nav-link active" style="" data-toggle="tab" role="tab" data-target="#post_search_content">文章</a></li> 
+        <li class="nav-item " role="presentation"><a class="nav-link " style="" data-toggle="tab" role="tab" data-target="#time_search_content">时光机</a></li> 
+       </ul> 
+       <div class="tab-content no-border no-padder">
+       <div role="tabpanel" id="post_search_content" class="tab-pane fade active in">
+       <ul id="search_modal_list" class="search_modal_list overflow-y-auto small-scroll-bar dropdown-menu">
+                </ul>
+        </div>
+        
+        
+       <div role="tabpanel" id="time_search_content" class="tab-pane fade">
+       <ul id="time_search_modal_list" class="search_modal_list overflow-y-auto small-scroll-bar dropdown-menu">
+                </ul>
+        </div>
+                
+       </div>
+       <!--tab-content--> 
+      </div> 
+      <!--tab-container-->
+     </div> 
+     <!--modal-body--> 
+    </div>
+    <!--modal-content--> 
+   </div>
+   <!--modal-dialog--> 
+  </div>
+  <!--modal-->
+  <!-- / headnav -->
+
+  <!--选择侧边栏的颜色-->
+  <aside id="aside" class="gpu-speed app-aside hidden-xs bg-dark">  <!--<aside>-->
+        <div class="aside-wrap" layout="column">
+        <div class="navi-wrap scroll-y scroll-hide" flex>
+          <!-- user -->
+          <div class="clearfix hidden-xs text-center hide  show" id="aside-user">
+            <div class="dropdown wrapper m-t-sm ">
+                <div ui-nav>
+                          <a href="https://blog.lawrenceshi.space/">
+                            <span class="thumb-lg w-auto-folded avatar  ">
+                  <img src="https://sc.cdn.lawrenceshi.space/avatar.jpg" class="img-full img-circle">
+                    <i class="md b-white bottom hide" id="auto_status" data-toggle="tooltip" data-placement="left" title=""></i>
+                </span>
+              </a>
+                </div>
+              <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded  ">
+                <span class="clear">
+                  <span class="block">
+                    <strong class="font-bold text-lt">Lawrence</strong>
+                    <b class="caret"></b>
+                  </span>
+                  <span class="text-muted text-xs block">一个学生，喜欢敲代码和DIY</span>
+                </span>
+              </a>
+              <!-- dropdown -->
+              <ul class="dropdown-menu animated fadeInRight w hidden-folded no-padder">
+                <li class="wrapper b-b m-b-sm bg-info m-n">
+                  <span class="arrow top hidden-folded arrow-info"></span>
+                  <div>
+                                                <p>晚上好，注意早点休息</p>
+                                  </div>
+                  <div class="progress progress-xs m-b-none dker">
+                    <div class="progress-bar bg-white" data-toggle="tooltip" data-original-title="时间已经度过87.50%" style="width: 87.50%"></div>
+                  </div>
+                </li>
+              </ul>
+              <!-- / dropdown -->
+            </div>
+          </div>
+          <!-- / user -->
+
+          <!-- nav -->
+          <nav ui-nav class="navi clearfix">
+            <ul class="nav">
+             <!--index-->
+                <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+<!--                <span>--><!--</span>-->
+              </li>
+                                          <!--主页-->
+              <li>
+                <a href="https://blog.lawrenceshi.space/" class="auto">
+                    <span class="nav-icon"><i data-feather="home"></i></span>
+                    <span>首页</span>
+                </a>
+              </li>
+              <!-- /主页 -->
+                                                          <li class="line dk"></li>
+			<!--Components-->
+              <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+<!--                <span>--><!--</span>-->
+              </li>
+              <!--分类category-->
+                              <li >
+                <a class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fontello icon-fw fontello-angle-right text"></i>
+                    <i class="fontello icon-fw fontello-angle-down text-active"></i>
+                  </span>
+<!--                  <i class="glyphicon glyphicon-th"></i>-->
+                    <span class="nav-icon"><i data-feather="grid"></i></span>
+
+                    <span>分类</span>
+                </a>
+                <ul class="nav nav-sub dk">
+<!--                  <li class="nav-sub-header">-->
+<!--                    <a>-->
+<!--                      <span>--><!--</span>-->
+<!--                    </a>-->
+<!--                  </li>-->
+                  <!--循环输出分类-->
+
+                    <li class="category-level-0 category-parent"><a class="auto" href="https://blog.lawrenceshi.space/index.php/category/daily/"><span class="pull-right text-muted">
+                    <i class="fontello icon-fw fontello-angle-right text"></i>
+                    <i class="fontello icon-fw fontello-angle-down text-active"></i>
+                  </span><span class="parent_name">生活日常</span></a><ul class="nav nav-sub dk child-nav"><li class="category-level-1 category-child category-level-odd"><a  href="https://blog.lawrenceshi.space/index.php/category/shu/"><b class="badge pull-right">2</b>读书感想</a></li><li class="category-level-1 category-child category-level-odd"><a  href="https://blog.lawrenceshi.space/index.php/category/yummy_food/"><b class="badge pull-right">1</b>吃的</a></li><li class="category-level-1 category-child category-level-odd"><a  href="https://blog.lawrenceshi.space/index.php/category/games/"><b class="badge pull-right">0</b>游戏</a></li></ul></li><li class="category-level-0 category-parent"><a class="auto" href="https://blog.lawrenceshi.space/index.php/category/technology/"><span class="pull-right text-muted">
+                    <i class="fontello icon-fw fontello-angle-right text"></i>
+                    <i class="fontello icon-fw fontello-angle-down text-active"></i>
+                  </span><span class="parent_name">科技</span></a><ul class="nav nav-sub dk child-nav"><li class="category-level-1 category-child category-level-odd"><a  href="https://blog.lawrenceshi.space/index.php/category/diy/"><b class="badge pull-right">0</b>diy</a></li><li class="category-level-1 category-child category-level-odd"><a  href="https://blog.lawrenceshi.space/index.php/category/coding/"><b class="badge pull-right">2</b>编程</a></li><li class="category-level-1 category-child category-level-odd"><a  href="https://blog.lawrenceshi.space/index.php/category/linux/"><b class="badge pull-right">2</b>linux</a></li><li class="category-level-1 category-child category-level-odd"><a  href="https://blog.lawrenceshi.space/index.php/category/arm_computer/"><b class="badge pull-right">0</b>单板机</a></li><li class="category-level-1 category-child category-level-odd"><a  href="https://blog.lawrenceshi.space/index.php/category/interesting/"><b class="badge pull-right">1</b>有趣的</a></li><li class="category-level-1 category-child category-level-odd"><a  href="https://blog.lawrenceshi.space/index.php/category/opensource/"><b class="badge pull-right">1</b>开源项目</a></li></ul></li><li class="category-level-0 category-parent"><a  href="https://blog.lawrenceshi.space/index.php/category/brou-s_articles/"><b class="badge pull-right">6</b>爸爸的文章</a></li><li class="category-level-0 category-parent"><a  href="https://blog.lawrenceshi.space/index.php/category/specialty/"><b class="badge pull-right">1</b>特殊</a></li>                    
+                    <!--/循环输出分类-->
+
+                </ul>
+              </li>
+                                    <!--独立页面pages-->
+              <li>
+                <a class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fontello icon-fw fontello-angle-right text"></i>
+                    <i class="fontello icon-fw fontello-angle-down text-active"></i>
+                  </span>
+                    <span class="nav-icon"><i data-feather="file"></i></span>
+                  <span>页面</span>
+                </a>
+                <ul class="nav nav-sub dk">
+<!--                  <li class="nav-sub-header">-->
+<!--                    <a data-no-instant>-->
+<!--                      <span>--><!--</span>-->
+<!--                    </a>-->
+<!--                  </li>-->
+                    <!--这个字段不会被显示出来-->
+                  <!--循环输出独立页面-->
+                                                                                   <li><a href="https://blog.lawrenceshi.space/index.php/cross.html"><span>时光机</span></a></li>
+                                                                 <li><a href="https://blog.lawrenceshi.space/index.php/sources.html"><span>本站使用资源</span></a></li>
+                                                                 <li><a href="https://blog.lawrenceshi.space/index.php/mygithub.html"><span>github的项目展示</span></a></li>
+                                                                 <li><a href="https://blog.lawrenceshi.space/index.php/talking.html"><span>留言板</span></a></li>
+                                                                 <li><a href="https://blog.lawrenceshi.space/index.php/81.html"><span>友情链接</span></a></li>
+                                                                 <li><a href="https://blog.lawrenceshi.space/index.php/history.html"><span>归档！</span></a></li>
+                                                                 <li><a href="https://blog.lawrenceshi.space/index.php/about.html"><span>关于</span></a></li>
+                                   </ul>
+              </li>
+                                                    <!--友情链接-->
+              <li>
+                <a class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fontello icon-fw fontello-angle-right text"></i>
+                    <i class="fontello icon-fw fontello-angle-down text-active"></i>
+                  </span>
+                    <span class="nav-icon"><i data-feather="user"></i></span>
+                  <span>友链</span>
+                </a>
+                <ul class="nav nav-sub dk">
+                  <li class="nav-sub-header">
+<!--                    <a data-no-instant>-->
+<!--                      <span>--><!--</span>-->
+<!--                    </a>-->
+<!--                  </li>-->
+                  <!--使用links插件，输出全站友链-->
+                 <li data-original-title="我爸爸的网站，他超厉害滴！
+他在我的博客也有账号：大哈虎
+" data-toggle="tooltip" 
+data-placement="top"><a rel='noopener' href="https://hshi.github.io/" target="_blank"><span>Hao Shi's Personal Website</span></a></li>                </ul>
+              </li>
+                                                </ul>
+          </nav>
+          <!-- nav -->
+            <!--left_footer-->
+                            <div id="left_footer" class="social_icon box-shadow-wrap-normal aside-items b-normal nav-xs lt">
+                    <a data-container="body" data-toggle="tooltip" data-placement="top" data-original-title="后台管理"
+                           target="_blank"  href="https://blog.lawrenceshi.space/admin/" class="aside-item btn btn-sm  btn-icon">
+                            <span class="left-bottom-icons block"><i data-feather="settings"></i></span>
+                        </a><a data-container="body" data-toggle="tooltip" data-placement="top" data-original-title="我的Github"
+                           target="_self"  href="http://social.lawrenceshi.space/github.html" class="aside-item btn btn-sm  btn-icon">
+                            <span class="left-bottom-icons block"><i data-feather="github"></i></span>
+                        </a>                </div>
+                    </div>
+          <!--end of .navi-wrap-->
+      </div><!--.aside-wrap-->
+  </aside>
+<!-- content -->
+
+<div id="content" class="app-content">
+    <div class="resize-pane">
+        <div id="trigger_left_content" class="trigger_content"><div class="trigger_drag_content"></div></div>
+        <div id="trigger_left_button" data-placement="right" data-toggle="tooltip" data-original-title="点击展开左侧边栏" class="normal-widget resize-pane-trigger box-shadow-wrap-lg"><i data-feather="sidebar"></i></div>
+    </div>
+    <!--loading animate-->
+    <div id="loading" class="butterbar active hide">
+            <span class="bar"></span>
+        </div>
+
+
+
+
+
+	<!-- / aside -->
+<!-- <div id="content" class="app-content"> -->
+   <a class="off-screen-toggle hide"></a>
+   <main class="app-content-body animated fadeIn">
+    <div class="hbox hbox-auto-xs hbox-auto-sm">
+    <!--文章-->
+     <div class="col center-part gpu-speed" id="post-panel">
+         <!--生成分享图片必须的HTML结构-->
+                          <style>
+        
+        .mdx-si-head .cover{
+            object-fit: cover;
+            width: 100%;
+            height: 100%
+        }
+        
+</style>
+<div class="mdx-share-img" id="mdx-share-img"><div class="mdx-si-head" style="background-image:url(https://blog.lawrenceshi.space/usr/themes/handsome/assets/img/sj/1.jpg)"><p>lawrenceshi</p><span>[笔记]关于数学上的期望值</span></div><div 
+class="mdx-si-sum">这篇文章依旧是根据爸爸的要求拟写关于期望值：期望值是一个统计学的关系，比较难懂。我们可以用期望值来计算理论上的收益...</div><div class="mdx-si-box"><span>扫描右侧二维码阅读全文</span><div class="mdx-si-qr" id="mdx-si-qr"><img 
+src="https://blog.lawrenceshi.space/usr/themes/handsome/libs/interface/GetCode.php?type=url&content=https://blog.lawrenceshi.space/index.php/archives/111/"></div></div><div class="mdx-si-time">19<br><span 
+class="mdx-si-time-2">2024/12</span></div></div>             <!--标题下的一排功能信息图标：作者/时间/浏览次数/评论数/分类-->
+      
+        <header id="small_widgets" class="bg-light lter wrapper-md">
+             <h1 class="entry-title m-n font-thin text-black l-h">[笔记]关于数学上的期望值<a class="plus-font-size" data-toggle="tooltip" data-original-title="点击改变文章字体大小"><i data-feather="type"></i></a><a class="speech-button m-l-sm superscript" data-toggle="tooltip" data-original-title="朗读文章"><i data-feather="mic"></i></a><a data-morphing style="vertical-align: -1px;" id="morphing" data-src="#morphing-content" href="javascript:;" class="read_mode superscript m-l-sm" 
+data-toggle="tooltip" data-placement="right" data-original-title="阅读模式"><i data-feather="book-open"></i></a></h1>       <!--文章标题下面的小部件-->
+                  <ul  class="entry-meta text-muted list-inline m-b-none small
+             post-head-icon">
+             <!--作者-->
+             <li class="meta-author"><span class="post-icons"><i data-feather="user"></i></span><span
+                         class="sr-only">博主：</span> <a class="meta-value" href="https://blog.lawrenceshi.space/index.php/author/1/" rel="author"> lawrenceshi</a></li>
+             <!--发布时间-->
+             <li class="meta-date" data-toggle="tooltip" data-html="true" data-original-title="2024 年 12 月 19 日 06 : 23  PM"><span class="post-icons"><i data-feather="clock"></i></span><span class="sr-only">发布时间：</span><time class="meta-value">2024 年 12 月 19 日</time></li>
+             <!--浏览数-->
+             <li class="meta-views"><span class="post-icons"><i data-feather="eye"></i></span><span class="meta-value">6&nbsp;次浏览</span></li>
+                              <!--评论数-->
+                 <li class="meta-comments"><span class="post-icons"><i data-feather="message-circle"></i></span><a
+                             class="meta-value" href="#comments">暂无评论</a></li>
+             
+             <!--文字数目-->
+             <li class="meta-word"><span class="post-icons"><i data-feather="pen-tool"></i></span><span class="meta-value">757字数</span></li>
+             <!--分类-->
+             <li class="meta-categories"><span class="post-icons"><i data-feather="hash"></i></span><span class="sr-only">分类：</span> <span class="meta-value" id="post_category"></span></li>
+         </ul>
+      </header>
+      <div class="wrapper-md">
+	   <ol class="breadcrumb bg-white-pure" itemscope=""><li>
+                 <a href="https://blog.lawrenceshi.space/" itemprop="breadcrumb" title="返回首页" data-toggle="tooltip"><span class="home-icons"><i data-feather="home"></i></span>首页</a>
+             </li><li class="active">正文&nbsp;&nbsp;</li>
+              <div style="float:right;">
+   分享到：
+   <style>
+   .breadcrumb i.iconfont.icon-qzone:after {
+    padding: 0 0 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+    }
+    .breadcrumb i.fontello.fontello-weibo:after {
+    padding: 0 5px 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+    }
+   </style>
+   <a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://blog.lawrenceshi.space/index.php/archives/111/&title=[笔记]关于数学上的期望值&site=https://blog.lawrenceshi.space/" itemprop="breadcrumb" target="_blank" title="" data-toggle="tooltip" data-original-title="分享到QQ空间" onclick="window.open(this.href, 'qzone-share', 'width=550,height=335');return false;"><i style ="font-size:15px;" class="iconfont icon-qzone" aria-hidden="true"></i></a>
+   <a href="https://service.weibo.com/share/share.php?url=https://blog.lawrenceshi.space/index.php/archives/111/&title=[笔记]关于数学上的期望值" target="_blank" itemprop="breadcrumb" title="" data-toggle="tooltip" data-original-title="分享到微博" onclick="window.open(this.href, 'weibo-share', 'width=550,height=335');return false;"><i style ="font-size:15px;" class="fontello fontello-weibo" aria-hidden="true"></i></a>   <a id="generateShareImg" itemprop="breadcrumb" title="" data-toggle="tooltip" data-original-title="生成分享图"><i style ="font-size:13px;" class="fontello fontello-camera" aria-hidden="true"></i></a></div></ol>       <!--博客文章样式 begin with .blog-post-->
+       <div id="postpage" class="blog-post">
+        <article class="single-post panel">
+        <!--文章页面的头图-->
+        <div class="entry-thumbnail" aria-hidden="true"><div class="item-thumb lazy"  style="background-image: url(https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj/1.jpg?x-oss-process=image/resize,w_1200)"></div></div>         <!--文章内容-->
+         <div id="post-content" class="wrapper-lg">
+
+             <script>
+        LocalConst.POST_MATHJAX = ""
+        LocalConst.EDITOR_CHOICE = "origin"
+</script><div class="entry-content l-h-2x" id="md_handsome_origin"><p><em>这篇文章依旧是根据爸爸的要求拟写</em></p><blockquote>关于期望值：<br>期望值是一个统计学的关系，比较难懂。<br>我们可以用期望值来计算理论上的收益/亏损<br><img src="https://blogc.cdn.lawrenceshi.space/usr/uploads/2024/12/2232478062.png?" alt="公式" title="公式" style=""></blockquote><p>公式的推倒过程：<br><code>p(1)</code>代表概率，那么我们抛到1的次数就是<code> N（次数）*p(1)</code>，则收益为<code> N（次数）*p(1)*X1(收益)</code><br>那么这个平均的收益值（期望）就是：</p><pre><code>N（次数）*p(1)*X1(收益) / N
+=p(1)*X1(收益)</code></pre><p>那么：<br>如果我们抛到正面就获得0.8元，走而抛到背面就亏损1元，则计算公示为：</p><pre><code>p(1)*0.8 + p(2)*（-1）
+=0.5*0.8+0.5*(-1)
+=(-0.3)</code></pre><p><img src="https://blogc.cdn.lawrenceshi.space/usr/uploads/2024/12/3532414351.png?" alt="公式" title="公式" style=""><br>所以总的来说这个公示就是计算理论的概率（也可以叫期望值）的，期望值应该遵循 在基数无限大的情况下无限接近与实际的概率。<br>以上是我个人理解，如有不对请指正。<br>好的，就这样吧，接下来附上参考链接和聊天记录：<br><a href="https://blog.lawrenceshi.space/index.php/go/aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTYlOTUlQjAlRTUlQUQlQTYlRTYlOUMlOUYlRTYlOUMlOUIvNTM2Mjc5MA" target="_blank" >参考自百度百科</a><br><img src="https://blogc.cdn.lawrenceshi.space/usr/uploads/2024/12/1204122275.png?" alt="2024-12-19T10:22:16.png" title="2024-12-19T10:22:16.png" style=""></p></div>
+
+                          <!--文章的页脚部件：打赏和其他信息的输出-->
+             <div class="show-foot"><div class="notebook" data-toggle="tooltip" data-original-title="2024 年 12 月 19 日 06 : 44  PM">
+                     <i class="fontello fontello-clock-o"></i>
+                     <span>最后修改：2024 年 12 月 19 日</span>
+                 </div><div class="copyright" data-toggle="tooltip" data-html="true" data-original-title="转载请保留本文转载地址，著作权归作者所有"><span>© 允许规范转载</span>
+                 </div>
+             </div>
+                         <!--打赏模块-->
+             <div class="support-author"><button id="star_post" data-cid="111" class="box-shadow-wrap-lg btn_post_footer like_button btn btn-pay btn-rounded">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shake-little unlike_svg feather feather-thumbs-up"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+                 <div class="circle-rounded"></div>
+                 <svg class="liked_svg" style="transform: scale(2.2);" xmlns="http://www.w3.org/2000/svg" viewBox="30 30 60 60" width="60" height="60" preserveAspectRatio="xMidYMid meet">
+                    <g clip-path="url(#__lottie_element_1061)">
+                        <g style="display: block;" transform="matrix(1,-0.0000012433954452717444,0.0000012433954452717444,1,47.87498474121094,47.057003021240234)" opacity="1">
+                            <g class="like_rotate">
+                                <g opacity="1" transform="matrix(1,0,0,1,14.376999855041504,11.416000366210938)">
+                                    <path stroke-linecap="butt" stroke-linejoin="miter" fill-opacity="0" stroke-miterlimit="10" stroke="rgb(255,255,255)" stroke-opacity="1" stroke-width="2" d=" M-7.936999797821045,9.531000137329102 C-7.936999797821045,9.531000137329102 3.378000020980835,9.531000137329102 3.378000020980835,9.531000137329102 C3.815999984741211,9.531000137329102 4.209000110626221,9.258999824523926 4.360000133514404,8.847000122070312 C4.360000133514404,8.847000122070312 7.501999855041504,0.36000001430511475 7.501999855041504,0.36000001430511475 C8.020000457763672,-1.0360000133514404 6.986000061035156,-2.5199999809265137 5.497000217437744,-2.5199999809265137 C5.497000217437744,-2.5199999809265137 -0.5669999718666077,-2.5199999809265137 -0.5669999718666077,-2.5199999809265137 C-0.6399999856948853,-2.5199999809265137 -0.6859999895095825,-2.5969998836517334 -0.6499999761581421,-2.6600000858306885 C-0.36800000071525574,-3.1679999828338623 0.6269999742507935,-4.922999858856201 0.8870000243186951,-5.764999866485596 C1.309000015258789,-7.13100004196167 0.847000002861023,-8.715999603271484 -1.4539999961853027,-9.519000053405762 C-1.4759999513626099,-9.526000022888184 -1.4989999532699585,-9.527000427246094 -1.5180000066757202,-9.519000053405762 C-1.5299999713897705,-9.513999938964844 -1.5410000085830688,-9.505999565124512 -1.5490000247955322,-9.494000434875488 C-1.7309999465942383,-9.234999656677246 -2.6489999294281006,-7.934000015258789 -3.6419999599456787,-6.52400016784668 C-4.795000076293945,-4.888000011444092 -6.050000190734863,-3.1059999465942383 -6.380000114440918,-2.638000011444092 C-6.434000015258789,-2.562000036239624 -6.519000053405762,-2.5199999809265137 -6.611000061035156,-2.5199999809265137 C-6.611000061035156,-2.5199999809265137 -7.938000202178955,-2.5199999809265137 -7.938000202178955,-2.5199999809265137 C-7.982999801635742,-2.5199999809265137 -8.020000457763672,-2.4839999675750732 -8.020000457763672,-2.437999963760376 C-8.020000457763672,-2.437999963760376 -8.020000457763672,9.447999954223633 -8.020000457763672,9.447999954223633 C-8.020000457763672,9.494000434875488 -7.982999801635742,9.531000137329102 -7.936999797821045,9.531000137329102z"></path>
+                                    <path fill="rgb(255,255,255)" fill-opacity="1" d=" M-7.936999797821045,9.531000137329102 C-7.936999797821045,9.531000137329102 3.378000020980835,9.531000137329102 3.378000020980835,9.531000137329102 C3.815999984741211,9.531000137329102 4.209000110626221,9.258999824523926 4.360000133514404,8.847000122070312 C4.360000133514404,8.847000122070312 7.501999855041504,0.36000001430511475 7.501999855041504,0.36000001430511475 C8.020000457763672,-1.0360000133514404 6.986000061035156,-2.5199999809265137 5.497000217437744,-2.5199999809265137 C5.497000217437744,-2.5199999809265137 -0.5669999718666077,-2.5199999809265137 -0.5669999718666077,-2.5199999809265137 C-0.6399999856948853,-2.5199999809265137 -0.6859999895095825,-2.5969998836517334 -0.6499999761581421,-2.6600000858306885 C-0.36800000071525574,-3.1679999828338623 0.6269999742507935,-4.922999858856201 0.8870000243186951,-5.764999866485596 C1.309000015258789,-7.13100004196167 0.847000002861023,-8.715999603271484 -1.4539999961853027,-9.519000053405762 C-1.4759999513626099,-9.526000022888184 -1.4989999532699585,-9.527000427246094 -1.5180000066757202,-9.519000053405762 C-1.5299999713897705,-9.513999938964844 -1.5410000085830688,-9.505999565124512 -1.5490000247955322,-9.494000434875488 C-1.7309999465942383,-9.234999656677246 -2.6489999294281006,-7.934000015258789 -3.6419999599456787,-6.52400016784668 C-4.795000076293945,-4.888000011444092 -6.050000190734863,-3.1059999465942383 -6.380000114440918,-2.638000011444092 C-6.434000015258789,-2.562000036239624 -6.519000053405762,-2.5199999809265137 -6.611000061035156,-2.5199999809265137 C-6.611000061035156,-2.5199999809265137 -7.938000202178955,-2.5199999809265137 -7.938000202178955,-2.5199999809265137 C-7.982999801635742,-2.5199999809265137 -8.020000457763672,-2.4839999675750732 -8.020000457763672,-2.437999963760376 C-8.020000457763672,-2.437999963760376 -8.020000457763672,9.447999954223633 -8.020000457763672,9.447999954223633 C-8.020000457763672,9.494000434875488 -7.982999801635742,9.531000137329102 -7.936999797821045,9.531000137329102z"></path>
+                                </g>
+                                <g opacity="1" transform="matrix(1,0,0,1,2.694000005722046,14.967000007629395)">
+                                    <path fill="rgb(255,255,255)" fill-opacity="1" d=" M0.5019999742507935,7.0269999504089355 C0.5019999742507935,7.0269999504089355 -0.5019999742507935,7.0269999504089355 -0.5019999742507935,7.0269999504089355 C-0.7789999842643738,7.0269999504089355 -1.003999948501587,6.802000045776367 -1.003999948501587,6.525000095367432 C-1.003999948501587,6.525000095367432 -1.003999948501587,-6.525000095367432 -1.003999948501587,-6.525000095367432 C-1.003999948501587,-6.802000045776367 -0.7789999842643738,-7.0269999504089355 -0.5019999742507935,-7.0269999504089355 C-0.5019999742507935,-7.0269999504089355 0.5019999742507935,-7.0269999504089355 0.5019999742507935,-7.0269999504089355 C0.7789999842643738,-7.0269999504089355 1.003999948501587,-6.802000045776367 1.003999948501587,-6.525000095367432 C1.003999948501587,-6.525000095367432 1.003999948501587,6.525000095367432 1.003999948501587,6.525000095367432 C1.003999948501587,6.802000045776367 0.7789999842643738,7.0269999504089355 0.5019999742507935,7.0269999504089355z"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                 </svg>
+                 <span>赞&nbsp;<span id="like_label" class="like_label">1</span></span>
+                 </button><div class="mt20 text-center article__reward-info">
+                        <span class="mr10">找不到赞赏的地方就对了🙂</span>
+                       </div>
+                     </div><!--support-author-->             <!--/文章的页脚部件：打赏和其他信息的输出-->
+         </div>
+        </article>
+       </div>
+       <!--上一篇&下一篇-->
+       <nav class="m-t-lg m-b-lg">
+        <ul class="pager">
+        <li class="next"> <a class="box-shadow-wrap-normal" href="https://blog.lawrenceshi.space/index.php/archives/106/" title="[笔记]关于证明概率相加定律的相关笔记" data-toggle="tooltip"> 
+下一篇 </a></li>   <li class="previous"> <a class="box-shadow-wrap-normal" href="https://blog.lawrenceshi.space/index.php/archives/112/" title="圣诞节了" data-toggle="tooltip"> 上一篇 </a></li>
+        </ul>
+       </nav>
+       <!--评论-->
+        
+            <style>
+            textarea#comment{
+                background-image: url('https://s2.ax1x.com/2019/07/20/ZzaGcV.png');
+                background-color: #ffffff;
+                transition: all 0.25s ease-in-out 0s;
+            }
+            textarea#comment:focus {
+                background-position-y: 105px;
+                transition: all 0.25s ease-in-out 0s;
+            }
+        </style>
+    
+    
+    <div id="comments">
+
+                    <!--评论列表-->
+            <div id="post-comment-list" class="skt-loading"><script type="text/javascript" id='outputCommentJS'>
+(function () {
+    window.TypechoComment = {
+        dom : function (id) {
+            return document.getElementById(id);
+        },
+    
+        create : function (tag, attr) {
+            var el = document.createElement(tag);
+        
+            for (var key in attr) {
+                el.setAttribute(key, attr[key]);
+            }
+        
+            return el;
+        },
+
+        reply : function (cid, coid) {
+            var comment = this.dom(cid), parent = comment.parentNode,
+                response = this.dom('respond-post-111'), input = this.dom('comment-parent'),
+                form = 'form' == response.tagName ? response : response.getElementsByTagName('form')[0],
+                textarea = response.getElementsByTagName('textarea')[0];
+
+            if (null == input) {
+                input = this.create('input', {
+                    'type' : 'hidden',
+                    'name' : 'parent',
+                    'id'   : 'comment-parent'
+                });
+
+                form.appendChild(input);
+            }
+
+            input.setAttribute('value', coid);
+
+            if (null == this.dom('comment-form-place-holder')) {
+                var holder = this.create('div', {
+                    'id' : 'comment-form-place-holder'
+                });
+
+                response.parentNode.insertBefore(holder, response);
+            }
+
+            comment.appendChild(response);
+            this.dom('cancel-comment-reply-link').style.display = '';
+
+            if (null != textarea && 'text' == textarea.name) {
+                textarea.focus();
+            }
+
+            return false;
+        },
+
+        cancelReply : function () {
+            var response = this.dom('respond-post-111'),
+            holder = this.dom('comment-form-place-holder'), input = this.dom('comment-parent');
+
+            if (null != input) {
+                input.parentNode.removeChild(input);
+            }
+
+            if (null == holder) {
+                return true;
+            }
+
+            this.dom('cancel-comment-reply-link').style.display = 'none';
+            holder.parentNode.insertBefore(response, holder);
+            return false;
+        }
+    };
+})();
+</script>
+<script type="text/javascript">
+var registCommentEvent = function() {
+    var event = document.addEventListener ? {
+        add: 'addEventListener',
+        focus: 'focus',
+        load: 'DOMContentLoaded'
+    } : {
+        add: 'attachEvent',
+        focus: 'onfocus',
+        load: 'onload'
+    };
+    
+    var r = document.getElementById('respond-post-111');
+    if (null != r) {
+        var forms = r.getElementsByTagName('form');
+        if (forms.length > 0) {
+            var f = forms[0], textarea = f.getElementsByTagName('textarea')[0], added = false;
+            var submitButton = f.querySelector('button[type="submit"]');
+            if (null != textarea && 'text' == textarea.name) {
+                var referSet =  function () {
+                    if (!added) {
+//                        console.log('commentjs');
+                        const child = f.querySelector('input[name="_"]');
+                        const child2 = f.querySelector('input[name="checkReferer"]');
+                        if (child!=null){
+                            f.removeChild(child);                        
+                        } 
+                        if (child2!=null){
+                            f.removeChild(child2);                        
+                        } 
+                        var input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = '_';
+                            input.value = (function () {
+    var _NcutH = //'YSG'
+'4'+//'w'
+'f76'+'fc'//'g62'
++'5c'//'Uu'
++'F9R'//'F9R'
++'b35'//'pZ'
++/* 'KM'//'KM' */''+'2'//'F'
++//'8'
+'15'+//'8e'
+'b28'+//'E'
+'a'+'d3'//'n'
++'292'//'2'
++'03f'//'Zxi'
++'kCf'//'kCf'
++'33d'//'sRW'
++//'3dR'
+'b2'+''///*'zB'*/'zB'
++'Pt'//'Pt'
++//'A'
+'A'+//'gJM'
+'0', _oBsGj = [[8,11],[26,29],[31,33],[31,32]];
+    
+    for (var i = 0; i < _oBsGj.length; i ++) {
+        _NcutH = _NcutH.substring(0, _oBsGj[i][0]) + _NcutH.substring(_oBsGj[i][1]);
+    }
+
+    return _NcutH;
+})();
+                    
+                        f.appendChild(input);
+                        
+                        input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = 'checkReferer';
+                        input.value = 'false';
+                        
+                        f.appendChild(input);
+                        
+
+                        added = true;
+                    }
+                };//end of reset
+                referSet();
+            }
+        }
+    }
+};
+
+$(function(){
+    registCommentEvent();
+});
+</script></div>        
+        <!--如果允许评论，会出现评论框和个人信息的填写-->
+                                    <div id="respond-post-111" class="respond comment-respond no-borders">
+
+                    <h4 id="reply-title" class="comment-reply-title m-t-lg m-b-none">发表评论                        <small class="cancel-comment-reply">
+                            <a id="cancel-comment-reply-link" href="https://blog.lawrenceshi.space/index.php/archives/111/#respond-post-111" rel="nofollow" style="display:none" onclick="return TypechoComment.cancelReply();">取消回复</a>                        </small>
+                        <div class="text-muted m-t-xs" style="font-size: 13px;line-height: 18px;">
+                            <i style="vertical-align: -2px;width:14px;height: 14px" data-feather="alert-circle"></i>
+                            使用cookie技术保留您的个人信息以便您下次快速评论，继续评论表示您已同意该条款                        </div>
+                    </h4>
+                    <form id="comment_form" method="post" action="https://blog.lawrenceshi.space/index.php/archives/111/comment"  class="comment-form" role="form">
+                        <input type="hidden" name="receiveMail" id="receiveMail" value="yes" />
+                        <div class="comment-form-comment form-group">
+                            <label class="padder-v-sm" for="comment">评论                                <span class="required text-danger">*</span></label>
+                            <textarea id="comment" class="textarea form-control OwO-textarea" name="text" rows="5" placeholder="说点什么吧……" onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
+                            <div class="OwO padder-v-sm"></div>
+                                                        <div class="secret_comment" id="secret_comment" data-toggle="tooltip"
+                            data-original-title="开启该功能，您的评论仅作者和评论双方可见">
+                                <label class="secret_comment_label control-label">私密评论</label>
+                                <div class="secret_comment_check">
+                                    <label class="i-switch i-switch-sm bg-info m-b-ss m-r">
+                                        <input type="checkbox" id="secret_comment_checkbox">
+                                        <i></i>
+                                    </label>
+                                </div>
+                            </div>
+                                                    </div>
+                        <!--判断是否登录-->
+                                                                            <div id="author_info" class="row row-sm">
+                                                                <div class="comment-form-author form-group col-sm-6 col-md-4">
+                                    <label for="author">名称                                        <span class="required text-danger">*</span></label>
+                                    <div>
+                                                                                <img class="author-avatar" src="https://gravatar.w3tt.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=65&r=G&d=https://files.code.lawrenceshi.space/icon-512x512.png" nogallery/>
+                                        <input id="author" class="form-control" name="author" type="text" value="" maxlength="245" placeholder="姓名或昵称">
+                                                                                <div class="random_user_name shake-constant">🎲</div>
+                                                                            </div>
+                                </div>
+
+                                <div class="comment-form-email form-group col-sm-6 col-md-4">
+                                    <label for="email">邮箱                                                                                <span class="required text-danger">*</span>
+                                                                            </label>
+                                    <input type="text" name="mail" id="mail" class="form-control" placeholder="邮箱 (必填,将保密)" value="" />
+                                </div>
+
+                                <div class="comment-form-url form-group col-sm-12 col-md-4">
+                                    <label for="url">地址                                                                                    <span class="required text-danger">*</span>
+                                                                            </label>
+                                    <input id="url" class="form-control" name="url" type="url" value="" maxlength="200" placeholder="网站或博客"></div>
+                            </div>
+                                                        <!--提交按钮-->
+                            <div class="form-group">
+                                <button type="submit" name="submit" id="submit" class="submit btn-rounded box-shadow-wrap-lg btn-gd-primary padder-lg">
+                                    <span>发表评论</span>
+                                    <span class="text-active">提交中...</span>
+                                </button>
+                                <i class="animate-spin fontello fontello-spinner hide" id="spin"></i>
+                                <input type="hidden" name="comment_post_ID" id="comment_post_ID">
+                                <input type="hidden" name="comment_parent" id="comment_parent">
+                            </div>
+                    </form>
+                </div>
+                    
+            </div>
+
+
+      </div>
+         <div class="resize-pane">
+        <div id="trigger_right_content" class="trigger_content"><div class="trigger_drag_content"></div></div>
+        <div id="trigger_right_button" data-placement="left" data-toggle="tooltip" data-original-title="点击展开右侧边栏" class="normal-widget resize-pane-trigger box-shadow-wrap-lg"><i data-feather="sidebar"></i></div>
+    </div>     </div>
+     <!--文章右侧边栏开始-->
+             <aside id="rightAside" class="asideBar col w-md bg-white-only bg-auto no-border-xs" role="complementary">
+     <div id="sidebar">
+               <section id="right_first_section" class="widget widget_tabs clear">
+       <div class="nav-tabs-alt no-js-hide new-nav-tab-wrap">
+        <ul class="nav nav-tabs nav-justified box-shadow-wrap-normal tablist new-nav-tab" role="tablist">
+            <li  data-index="0" class="active" role="presentation"> <a  data-target="#widget-tabs-4-hots" role="tab"
+                                                                   aria-controls="widget-tabs-4-hots" aria-expanded="true" data-toggle="tab"><div class="sidebar-icon" data-toggle="tooltip" title="热门文章" data-container="body"><i data-feather="thumbs-up"></i><span class="sr-only">热门文章</span></div> </a></li>
+                            <li role="presentation" data-index="1"> <a data-target="#widget-tabs-4-comments" role="tab" aria-controls="widget-tabs-4-comments" aria-expanded="false" data-toggle="tab"><div data-toggle="tooltip" title="最新评论" data-container="body" class="sidebar-icon"><i  data-feather="message-square"></i><span class="sr-only">最新评论</span></div>  </a></li>
+                        <li data-index="2" role="presentation"> <a data-target="#widget-tabs-4-random" role="tab" aria-controls="widget-tabs-4-random" aria-expanded="false" data-toggle="tab"> <div data-toggle="tooltip" title="随机文章" data-container="body" class="sidebar-icon"><i data-feather="gift"></i><span class="sr-only">随机文章</span></div>
+             </a></li>
+            <span class="navs-slider-bar"></span>
+        </ul>
+       </div>
+       <div class="tab-content new-nav-tab-content">
+       <!--热门文章-->
+        <div id="widget-tabs-4-hots" class="tab-pane  fade in wrapper-md active" role="tabpanel">
+<!--         <h5 class="widget-title m-t-none text-md">--><!--</h5>-->
+         <ul class="list-group no-bg no-borders pull-in m-b-none">
+          <li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/8/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/9.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/8/" title="如何通过Typecho创建博客 不使用宝塔面板 （配置LNMPA环境）"> 如何通过Typecho创建博客 不使用宝塔面板 （配置LNMPA环境） </a></h4>
+                    <small class="text-muted post-head-icon text-second"><span class="meta-views"> <span class="right-small-icons"><i data-feather="message-circle"></i></span>  <span class="sr-only">评论数：</span> <span class="meta-value">4</span>
+                    </span></small></div></li><li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/37/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/10.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/37/" title="爷孙骑驴"> 爷孙骑驴 </a></h4>
+                    <small class="text-muted post-head-icon text-second"><span class="meta-views"> <span class="right-small-icons"><i data-feather="message-circle"></i></span>  <span class="sr-only">评论数：</span> <span class="meta-value">3</span>
+                    </span></small></div></li><li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/1/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/1.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/1/" title="欢迎使用 Typecho"> 欢迎使用 Typecho </a></h4>
+                    <small class="text-muted post-head-icon text-second"><span class="meta-views"> <span class="right-small-icons"><i data-feather="message-circle"></i></span>  <span class="sr-only">评论数：</span> <span class="meta-value">1</span>
+                    </span></small></div></li><li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/114/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/8.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/114/" title="历史公告：乐乐blog维护"> 历史公告：乐乐blog维护 </a></h4>
+                    <small class="text-muted post-head-icon text-second"><span class="meta-views"> <span class="right-small-icons"><i data-feather="message-circle"></i></span>  <span class="sr-only">评论数：</span> <span class="meta-value">1</span>
+                    </span></small></div></li><li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/35/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/6.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/35/" title="加入乐乐博客：献上更多启发与帮助的文章"> 加入乐乐博客：献上更多启发与帮助的文章 </a></h4>
+                    <small class="text-muted post-head-icon text-second"><span class="meta-views"> <span class="right-small-icons"><i data-feather="message-circle"></i></span>  <span class="sr-only">评论数：</span> <span class="meta-value">1</span>
+                    </span></small></div></li>         </ul>
+        </div>
+                   <!--最新评论-->
+        <div id="widget-tabs-4-comments" class="tab-pane fade wrapper-md no-js-show" role="tabpanel">
+<!--         <h5 class="widget-title m-t-none text-md">--><!--</h5>-->
+         <ul class="list-group no-borders pull-in auto m-b-none no-bg">
+                              <li class="list-group-item">
+
+              <a href="https://blog.lawrenceshi.space/index.php/archives/37/#comment-48" class="pull-left thumb-sm avatar m-r">
+                  <img nogallery src="https://gravatar.w3tt.com/avatar/7476d403b17e3d6cf8ce5facc6fa31b1?s=65&r=G&d=https://files.code.lawrenceshi.space/icon-512x512.png" class="img-40px photo img-square normal-shadow">              </a>
+              <a href="https://blog.lawrenceshi.space/index.php/archives/37/#comment-48" class="text-muted">
+                  <!--<i class="iconfont icon-comments-o text-muted pull-right m-t-sm text-sm" title="" aria-hidden="true" data-toggle="tooltip" data-placement="auto left"></i>
+                  <span class="sr-only"></span>-->
+              </a>
+              <div class="clear">
+                  <div class="text-ellipsis">
+                      <a href="https://blog.lawrenceshi.space/index.php/archives/37/#comment-48" title="lawrenceshi"> lawrenceshi </a>
+                  </div>
+                  <small class="text-muted">
+                      <span>
+                          hmm                      </span>
+                  </small>
+              </div>
+          </li>
+                    <li class="list-group-item">
+
+              <a href="https://blog.lawrenceshi.space/index.php/archives/37/#comment-20" class="pull-left thumb-sm avatar m-r">
+                  <img nogallery src="https://gravatar.w3tt.com/avatar/7476d403b17e3d6cf8ce5facc6fa31b1?s=65&r=G&d=https://files.code.lawrenceshi.space/icon-512x512.png" class="img-40px photo img-square normal-shadow">              </a>
+              <a href="https://blog.lawrenceshi.space/index.php/archives/37/#comment-20" class="text-muted">
+                  <!--<i class="iconfont icon-comments-o text-muted pull-right m-t-sm text-sm" title="" aria-hidden="true" data-toggle="tooltip" data-placement="auto left"></i>
+                  <span class="sr-only"></span>-->
+              </a>
+              <div class="clear">
+                  <div class="text-ellipsis">
+                      <a href="https://blog.lawrenceshi.space/index.php/archives/37/#comment-20" title="lawrenceshi"> lawrenceshi </a>
+                  </div>
+                  <small class="text-muted">
+                      <span>
+                          普通的故事，尽人皆知，但是那段感触深入人心，继续加油！                      </span>
+                  </small>
+              </div>
+          </li>
+                    <li class="list-group-item">
+
+              <a href="https://blog.lawrenceshi.space/index.php/archives/35/#comment-19" class="pull-left thumb-sm avatar m-r">
+                  <img nogallery src="https://gravatar.w3tt.com/avatar/7476d403b17e3d6cf8ce5facc6fa31b1?s=65&r=G&d=https://files.code.lawrenceshi.space/icon-512x512.png" class="img-40px photo img-square normal-shadow">              </a>
+              <a href="https://blog.lawrenceshi.space/index.php/archives/35/#comment-19" class="text-muted">
+                  <!--<i class="iconfont icon-comments-o text-muted pull-right m-t-sm text-sm" title="" aria-hidden="true" data-toggle="tooltip" data-placement="auto left"></i>
+                  <span class="sr-only"></span>-->
+              </a>
+              <div class="clear">
+                  <div class="text-ellipsis">
+                      <a href="https://blog.lawrenceshi.space/index.php/archives/35/#comment-19" title="lawrenceshi"> lawrenceshi </a>
+                  </div>
+                  <small class="text-muted">
+                      <span>
+                          欢迎欢迎！  以后爸爸也要多在我的博客上些文章呀！                      </span>
+                  </small>
+              </div>
+          </li>
+                    <li class="list-group-item">
+
+              <a href="https://blog.lawrenceshi.space/index.php/archives/1/#comment-1" class="pull-left thumb-sm avatar m-r">
+                  <img nogallery src="https://gravatar.w3tt.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=65&r=G&d=https://files.code.lawrenceshi.space/icon-512x512.png" class="img-40px photo img-square normal-shadow">              </a>
+              <a href="https://blog.lawrenceshi.space/index.php/archives/1/#comment-1" class="text-muted">
+                  <!--<i class="iconfont icon-comments-o text-muted pull-right m-t-sm text-sm" title="" aria-hidden="true" data-toggle="tooltip" data-placement="auto left"></i>
+                  <span class="sr-only"></span>-->
+              </a>
+              <div class="clear">
+                  <div class="text-ellipsis">
+                      <a href="https://blog.lawrenceshi.space/index.php/archives/1/#comment-1" title="Typecho"> Typecho </a>
+                  </div>
+                  <small class="text-muted">
+                      <span>
+                          欢迎加入 Typecho 大家族                      </span>
+                  </small>
+              </div>
+          </li>
+                   </ul>
+        </div>
+                   <!--随机文章-->
+        <div id="widget-tabs-4-random" class="tab-pane fade wrapper-md no-js-show" role="tabpanel">
+<!--            <h5 class="widget-title m-t-none text-md">--><!--</h5>-->
+            <ul class="list-group no-bg no-borders pull-in m-b-none">
+            <li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/52/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/9.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/52/" title="费曼学习法"> 费曼学习法 </a></h4>
+                    <small class="text-muted post-head-icon"><span class="meta-views "> <span class="right-small-icons"><i data-feather="message-circle"></i></span> <span class="sr-only">评论数：</span> <span class="meta-value">0</span>
+                    </span></small></div></li><li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/69/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/10.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/69/" title="《太白金星有点烦》书摘"> 《太白金星有点烦》书摘 </a></h4>
+                    <small class="text-muted post-head-icon"><span class="meta-views "> <span class="right-small-icons"><i data-feather="message-circle"></i></span> <span class="sr-only">评论数：</span> <span class="meta-value">0</span>
+                    </span></small></div></li><li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/50/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/1.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/50/" title="2024 年 05 月 03 日 03 时 59 分"> 2024 年 05 月 03 日 03 时 59 分 </a></h4>
+                    <small class="text-muted post-head-icon"><span class="meta-views "> <span class="right-small-icons"><i data-feather="message-circle"></i></span> <span class="sr-only">评论数：</span> <span class="meta-value">0</span>
+                    </span></small></div></li><li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/70/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/8.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/70/" title="《考试脑科学：脑科学中的高效记忆法》读完书评"> 《考试脑科学：脑科学中的高效记忆法》读完书评 </a></h4>
+                    <small class="text-muted post-head-icon"><span class="meta-views "> <span class="right-small-icons"><i data-feather="message-circle"></i></span> <span class="sr-only">评论数：</span> <span class="meta-value">0</span>
+                    </span></small></div></li><li class="list-group-item">
+                <a href="https://blog.lawrenceshi.space/index.php/archives/106/" class="pull-left thumb-sm m-r"><img src="https://blogc.cdn.lawrenceshi.space/usr/themes/handsome/assets/img/sj2/6.jpg?x-oss-process=image/resize,m_lfit,h_80,w_80" class="img-40px normal-shadow img-square"></a>
+                <div class="clear">
+                    <h4 class="h5 l-h text-second text-ellipsis"> <a href="https://blog.lawrenceshi.space/index.php/archives/106/" title="[笔记]关于证明概率相加定律的相关笔记"> [笔记]关于证明概率相加定律的相关笔记 </a></h4>
+                    <small class="text-muted post-head-icon"><span class="meta-views "> <span class="right-small-icons"><i data-feather="message-circle"></i></span> <span class="sr-only">评论数：</span> <span class="meta-value">1</span>
+                    </span></small></div></li>            </ul>
+        </div>
+       </div>
+      </section>
+               <!--博客信息-->
+               <section id="blog_info" class="widget widget_categories wrapper-md padder-v-none clear">
+       <h5 class="widget-title m-t-none">博客信息</h5>
+       <ul class="list-group box-shadow-wrap-normal">
+                      <li class="list-group-item text-second"><span class="blog-info-icons"> <i data-feather="award"></i></span> <span
+                       class="badge
+           pull-right">34</span>文章数目</li>
+                      <li class="list-group-item text-second"> <span class="blog-info-icons"> <i data-feather="message-circle"></i></span>
+               <span class="badge
+           pull-right">45</span>评论数目</li>
+                      <li class="list-group-item text-second"><span class="blog-info-icons"> <i data-feather="calendar"></i></span>
+               <span class="badge
+           pull-right">268天</span>运行天数</li>
+           <li class="list-group-item text-second"><span class="blog-info-icons"> <i data-feather="activity"></i></span> <span
+                       class="badge
+           pull-right">3 天前</span>最后活动</li>
+       </ul>
+      </section>
+                        <!--广告位置-->
+         <section id="a_d_sidebar" class="widget widget_categories wrapper-md clear">
+             <h5 class="widget-title m-t-none">广告</h5>
+            <a href="https://www.travellings.cn/go.html" rel="noopener" title="开往-友链接力">
+    <img src="https://www.travellings.cn/assets/logo.gif" alt="开往-友链接力" width="120">
+</a>         </section>
+                  <!--非文章页面-->
+                <!--文章页面-->
+          <section id="tag_cloud-post" class="widget widget_tag_cloud wrapper-md clear">
+              <h5 class="widget-title m-t-none">文章标签</h5>
+              <div class="tags l-h-2x panel wrapper-sm padder-v-ssm">
+                  暂无标签              </div>
+          </section>
+          <div id="tag_toc_body" class="tag_toc_body">
+              <section id="tag_toc" class="widget widget_categories wrapper-md clear">
+                  <h5 class="widget-title m-t-none">文章目录</h5>
+                  <div class="tags l-h-2x box-shadow-wrap-normal">
+                      <div id="toc" class="small-scroll-bar overflow-y-auto"></div>
+                  </div>
+              </section>
+          </div>
+
+        </div>
+     </aside>
+       <!--文章右侧边栏结束-->
+    </div>
+   </main>
+
+
+    
+<div id="morphing-content" class="hidden read_mode_article">
+        <div class="page">
+            <h1 class="title">[笔记]关于数学上的期望值</h1>
+            <div class="metadata singleline"><a href="#" rel="author" class="byline">lawrenceshi</a>&nbsp;•&nbsp;<span class="delimiter"></span><time class="date">2024 年 12 月 19 日</time></div>     
+            <textarea id="morphing-content-real_origin_text">&lt;p&gt;&lt;em&gt;这篇文章依旧是根据爸爸的要求拟写&lt;/em&gt;&lt;/p&gt;&lt;blockquote&gt;关于期望值：&lt;br&gt;期望值是一个统计学的关系，比较难懂。&lt;br&gt;我们可以用期望值来计算理论上的收益/亏损&lt;br&gt;&lt;img src=&quot;https://blogc.cdn.lawrenceshi.space/usr/uploads/2024/12/2232478062.png?&quot; alt=&quot;公式&quot; title=&quot;公式&quot; style=&quot;&quot;&gt;&lt;/blockquote&gt;&lt;p&gt;公式的推倒过程：&lt;br&gt;&lt;code&gt;p(1)&lt;/code&gt;代表概率，那么我们抛到1的次数就是&lt;code&gt; N（次数）*p(1)&lt;/code&gt;，则收益为&lt;code&gt; N（次数）*p(1)*X1(收益)&lt;/code&gt;&lt;br&gt;那么这个平均的收益值（期望）就是：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;N（次数）*p(1)*X1(收益) / N
+=p(1)*X1(收益)&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;那么：&lt;br&gt;如果我们抛到正面就获得0.8元，走而抛到背面就亏损1元，则计算公示为：&lt;/p&gt;&lt;pre&gt;&lt;code&gt;p(1)*0.8 + p(2)*（-1）
+=0.5*0.8+0.5*(-1)
+=(-0.3)&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&quot;https://blogc.cdn.lawrenceshi.space/usr/uploads/2024/12/3532414351.png?&quot; alt=&quot;公式&quot; title=&quot;公式&quot; style=&quot;&quot;&gt;&lt;br&gt;所以总的来说这个公示就是计算理论的概率（也可以叫期望值）的，期望值应该遵循 在基数无限大的情况下无限接近与实际的概率。&lt;br&gt;以上是我个人理解，如有不对请指正。&lt;br&gt;好的，就这样吧，接下来附上参考链接和聊天记录：&lt;br&gt;&lt;a href=&quot;https://blog.lawrenceshi.space/index.php/go/aHR0cHM6Ly9iYWlrZS5iYWlkdS5jb20vaXRlbS8lRTYlOTUlQjAlRTUlQUQlQTYlRTYlOUMlOUYlRTYlOUMlOUIvNTM2Mjc5MA&quot; target=&quot;_blank&quot; &gt;参考自百度百科&lt;/a&gt;&lt;br&gt;&lt;img src=&quot;https://blogc.cdn.lawrenceshi.space/usr/uploads/2024/12/1204122275.png?&quot; alt=&quot;2024-12-19T10:22:16.png&quot; title=&quot;2024-12-19T10:22:16.png&quot; style=&quot;&quot;&gt;&lt;/p&gt;</textarea>
+<div id="morphing-content-real_origin"></div>
+        </div>
+    </div>
+<!-- footer -->
+	</div><!-- /content -->
+
+<!--right panel-->
+    <script type="text/template" id="tmpl-customizer">
+        <div class="settings panel panel-default setting_body_panel right_panel" aria-hidden="true">
+            <button class="rightSettingBtn btn btn-default pos-abt border-radius-half-left"
+                    data-toggle="tooltip" data-placement="left" data-original-title="夜/日间模式"
+                    data-toggle-class=".settings=active, .settings-icon=animate-spin-span,.tocify-mobile-panel=false">
+                  <span class="settings-icon"><i width="13px" height="13px"
+                                                 data-feather="settings"></i></span>
+            </button>
+            <div class="panel-heading">
+                <button class="mode-set pull-right btn btn-xs btn-rounded btn-danger " name="reset" data-toggle="tooltip"
+                        data-placement="left" data-original-title="恢复默认值" >重置</button>
+                夜/日间模式
+            </div>
+            <div class="setting_body">
+                <div class="panel-body">
+                    <# for ( var keys = _.keys( data.sections.settings ), i = 0, name; keys.length > i; ++i ) { #>
+                    <div<# if ( i !== ( keys.length - 1 ) ) print( ' class="m-b-sm"' ); else print(' id="mode_set" class="mode_set"')
+                    #>>
+                    <label class="i-switch bg-info pull-right">
+                        <input type="checkbox" name="{{ keys[i] }}" <#
+                        print( ' value="'+handsome_UI.mode+data
+                        .defaults[keys[i]]+'"' )
+                        if ((data.defaults[keys[i]]=="auto" && handsome_UI.mode =="dark") || data
+                        .defaults[keys[i]] == true) print( ' checked="checked"' );
+                        #> />
+                        <i></i>
+                    </label>
+
+                    <span> <# if(data.defaults[keys[i]]=="auto") print(LocalConst.DARK_MODE_AUTO); else if(data
+                      .sections.settings[keys[i]] == LocalConst.DARK_MODE) {print(LocalConst.DARK_MODE_FIXED)
+                      }else print(data.sections.settings[keys[i]]);#></span>
+                    <# if ( i == ( keys.length - 1 ) ) {print( ' <small id="auto_info"'); if(data.defaults[keys[i]]!=="auto") print(' style="display:none"') ;print('><i class="glyphicon glyphicon-info-sign" data-toggle="tooltip" data-placement="bottom" data-original-title="网站深色模式自动依据您的设备关于深色模式的设置进行切换"></i></small>')}; #>
+                </div>
+                <# } #>
+            </div>
+            <div class="wrapper b-t b-light bg-light lter r-b">
+                <div class="row row-sm">
+                    <div class="col-xs-4">
+                        <#
+                        _.each( data.sections.colors, function( color, i ) {
+                        var newColumnBefore = ( i % 5 ) === 4;
+                        #>
+                        <label class="i-checks block<# if ( !newColumnBefore ) print( ' m-b-sm' ); #>">
+                            <input type="radio" name="color" value="{{ i }}"<# if ( data.defaults['color'] === i ) print( ' checked="checked"' ); #> />
+                            <span class="block bg-light clearfix pos-rlt">
+								<span class="active pos-abt w-full h-full bg-black-opacity text-center">
+									<i class="fontello fontello-check text-md text-white m-t-xs"></i>
+								</span>
+								<b class="{{ color.navbarHeader }} header"></b>
+								<b class="{{ color.navbarCollapse }} header"></b>
+								<b class="{{ color.aside.replace( ' b-r', '' ) }}"></b>
+							</span>
+                        </label>
+                        <#
+                        if ( newColumnBefore && ( i + 1 ) < data.sections.colors.length )
+                        print( '</div><div class="col-xs-4">' );
+                        } );
+                        #>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </script>
+<div class="topButton panel panel-default">
+    <button id="goToTop" class=" btn btn-default rightSettingBtn  pos-abt hide
+          border-radius-half-left"
+            data-toggle="tooltip" data-placement="left" data-original-title="返回顶部">
+        <span class="settings-icon2"><i width="13px" height="13px" data-feather="corner-right-up"></i></span>
+        <!--              <i class="fontello fontello-chevron-circle-up" aria-hidden="true"></i>-->
+    </button>
+</div>
+    <div class="tag_toc_body hide">
+        <div class="tocify-mobile-panel panel panel-default setting_body_panel right_panel" aria-hidden="true">
+            <button class="rightSettingBtn border-radius-half-left btn btn-default pos-abt "
+                    data-toggle="tooltip"
+                    data-placement="left"
+                    data-original-title="目录" data-toggle-class=".tocify-mobile-panel=active,
+                    .settings=false">
+                <span class="settings-icon2"><i width="13px" height="13px" data-feather="list"></i></span>
+            </button>
+            <div class="panel-heading">文章目录</div>
+            <div class="setting_body toc-mobile-body">
+                <div class="panel-body">
+                    <div id="tocTree" class="tocTree"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer id="footer" class="app-footer" role="footer">
+    <div class="padder-sm bg-white footer_wrapper box-shadow-wrap-normal b-normal">
+        <div class="pull-right hidden-xs text-ellipsis">
+             <a href="http://lawrenceshi.space">乐之主页</a>
+<a href="https://www.travellings.cn/go.html" target="_blank" rel="noopener" >🚇
+</a>                        <a href="https://typecho.org/" style="margin-left: 5px" target="_blank">
+                <svg style="width: 16px;height: 16px;vertical-align: -4px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="26px" viewBox="0 0 30 26" version="1.1">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+
+                        <path d="M13,26 C3.36833333,26 0,22.631 0,13 C0,3.36866667 3.36833333,0 13,0 C22.6316667,0 26,3.36866667 26,13 C26,22.631 22.6316667,26 13,26 Z M6,9 L20,9 L20,7 L6,7 L6,9 Z M6,14 L16,14 L16,12 L6,12 L6,14 Z M6,19 L18,19 L18,17 L6,17 L6,19 Z" id="icon" fill="#000000" sketch:type="MSShapeGroup"/>
+                    </g>
+                </svg>
+            </a>
+            <a class="highlightlink" href="https://www.ihewro.com/archives/489/" target="_blank">
+                <span>Theme by handsome</span>
+            </a>
+                    </div>
+        <span class="text-ellipsis">&copy;&nbsp;2024 All rights reserved.
+                <a href="https://beian.miit.gov.cn/">苏ICP备2023007722号</a>
+        </span>
+    </div>
+
+</footer>
+
+
+
+  </div><!--end of .app app-header-fixed-->
+
+
+
+
+                    <script>
+                (function () {
+                    function loadFontAwesome() {
+                        if (document.querySelector('.fa')) {
+                            let rel = document.createElement('link');
+                            rel.rel = 'stylesheet';
+                            rel.href = 'https://blog.lawrenceshi.space/usr/plugins/AAEditor/assets/mirror/css/font-awesome.min.css';
+                            document.body.appendChild(rel);
+                        }
+                    }
+
+                    loadFontAwesome();
+                    document.addEventListener('pjax:complete', () => {
+                        loadFontAwesome();
+                    });
+                })();
+            </script>
+                        <script id="MathJax-script" async
+                    src="https://blog.lawrenceshi.space/usr/plugins/AAEditor/assets/mirror/js/tex-mml-chtml.js"></script>
+            <script>
+                // 配置 MathJax
+                MathJax = {
+                    tex: {
+                        inlineMath: [['$', '$']],
+                        displayMath: [['$$', '$$']],
+                        processEscapes: true,
+                        processEnvironments: true,
+                    },
+                    options: {
+                        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                    },
+                };
+                // 刷新预时重新渲染
+                document.addEventListener('pjax:complete', () => {
+                    try {
+                        MathJax.typesetPromise();
+                    } catch (e) {
+
+                    }
+                });
+            </script>
+                    <style>
+            .x-hide{background-color:#f3f4f6;border:1px solid #ccc;border-radius:4px;padding:32px 8px 8px;position:relative}.x-hide br:first-child{display:none}.x-hide.already-hide{text-align:center}.x-hide .x-hide-icon{fill:currentColor;cursor:pointer;display:flex;height:16px;position:absolute;right:8px;top:8px;width:16px}.x-hide .x-hide-icon svg{margin-top:-4px}.x-hide .x-hide-text{cursor:pointer;display:block;-webkit-user-select:none;-moz-user-select:none;user-select:none}.x-hide:before{background:#fc625d;border-radius:50%;box-shadow:20px 0 #fdbc40,40px 0 #35cd4b;content:"";height:12px;left:8px;position:absolute;top:10px;width:12px;z-index:1}.x-hide.blur .x-hide-text{filter:blur(5px)}.x-checkbox{display:none}.x-checkbox-label{background-color:#99f;border-radius:4px;box-sizing:border-box;cursor:not-allowed;display:inline-flex;height:20px;margin-bottom:2px;-webkit-mask-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTUgM2MtMS4wOTMgMC0yIC45MDctMiAydjE0YzAgMS4wOTMuOTA3IDIgMiAyaDE0YzEuMDkzIDAgMi0uOTA3IDItMlY1YzAtMS4wOTMtLjkwNy0yLTItMkg1em0wIDJoMTR2MTRINVY1eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+");mask-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTUgM2MtMS4wOTMgMC0yIC45MDctMiAydjE0YzAgMS4wOTMuOTA3IDIgMiAyaDE0YzEuMDkzIDAgMi0uOTA3IDItMlY1YzAtMS4wOTMtLjkwNy0yLTItMkg1em0wIDJoMTR2MTRINVY1eiIgZmlsbD0iY3VycmVudENvbG9yIi8+PC9zdmc+");-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain;position:relative;vertical-align:middle;width:20px}.x-checkbox:checked+.x-checkbox-label{-webkit-mask-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTUgM2MtMS4wOTMgMC0yIC45MDctMiAydjE0YzAgMS4wOTMuOTA3IDIgMiAyaDE0YzEuMDkzIDAgMi0uOTA3IDItMlY1YzAtMS4wOTMtLjkwNy0yLTItMkg1em0wIDJoMTR2MTRINVY1em0xMS4yOTMgMy4yOTNMMTAgMTQuNTg2bC0yLjI5My0yLjI5My0xLjQxNCAxLjQxNEwxMCAxNy40MTRsNy43MDctNy43MDctMS40MTQtMS40MTR6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz48L3N2Zz4=");mask-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTUgM2MtMS4wOTMgMC0yIC45MDctMiAydjE0YzAgMS4wOTMuOTA3IDIgMiAyaDE0YzEuMDkzIDAgMi0uOTA3IDItMlY1YzAtMS4wOTMtLjkwNy0yLTItMkg1em0wIDJoMTR2MTRINVY1em0xMS4yOTMgMy4yOTNMMTAgMTQuNTg2bC0yLjI5My0yLjI5My0xLjQxNCAxLjQxNEwxMCAxNy40MTRsNy43MDctNy43MDctMS40MTQtMS40MTR6IiBmaWxsPSJjdXJyZW50Q29sb3IiLz48L3N2Zz4=")}
+
+/*# sourceMappingURL=x.css.map*/        </style>
+        <script type="text/javascript" src="//lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script><canvas id="fireworks" style="position:fixed;left:0;top:0;pointer-events:none;"></canvas><script type="text/javascript" src="https://cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script><script type='text/javascript' src='/usr/plugins/HoerMouse/static/js/fireworks.js'></script><script>console.log('%c炫彩鼠标插件%chttps://gitee.com/HoeXhe/HoerMouse Hoe主页www.hoehub.com ','line-height:28px;padding:4px;background:#3f51b5;color:#fff;font-size:14px;','padding:4px; color:#673ab7');</script>
+
+<!--定义全局变量-->
+
+
+<style>
+    .setting_body .panel-body .m-b-sm{
+        display: none;
+    }
+    .setting_body .panel-body ~ .wrapper{
+        display: none;
+    }
+</style>
+
+<!--主题核心js-->
+
+
+
+
+
+    <script src="https://blog.lawrenceshi.space/usr/themes/handsome/assets/js/function.min.js?v=9.2.120230801501"></script>
+
+    <script src="https://blog.lawrenceshi.space/usr/themes/handsome/assets/js/core.min.js?v=9.2.120230801501"></script>
+
+
+
+<script>
+    $(function () {
+        if ('serviceWorker' in navigator) {
+            if (LocalConst.USE_CACHE) {
+                navigator.serviceWorker.addEventListener('controllerchange', function (ev) {
+                    try {
+                        if (LocalConst.SERVICE_WORKER_INSTALLED){
+                            $.message({
+                                title:"检测到本地缓存需要更新",
+                                message:"<a href='#' onclick='window.location.reload();'>点击刷新页面</a>更新本地缓存",
+                                type:'warning',
+                                time: '300000'
+                            });
+                        }else{
+                            console.log("controllerchange:first sw install success");
+                        }
+                    }catch (e) {
+                        console.log("controllerchange error",e);
+                    }
+                });
+            }
+        }
+    })
+</script>
+
+<!--主题组件js加载-->
+    <script src="https://blog.lawrenceshi.space/usr/themes/handsome/assets/js/features/jquery.pjax.min.js" type="text/javascript"></script>
+
+    <!--平滑滚动组件-->
+    <script src="https://blog.lawrenceshi.space/usr/themes/handsome/assets/js/features/SmoothScroll.min.js"></script>
+
+
+<!--pjax动画组件-->
+
+
+
+
+
+
+<!--截图插件-->
+<script src="https://blog.lawrenceshi.space/usr/themes/handsome/assets/js/features/html2canvas.min.js"></script>
+<!--主题组件js加载结束-->
+
+<!--用户自定义js-->
+<script type="text/javascript">
+    try{
+            }catch (e){
+        handsome_util.settingError("外观设置————开发者设置——自定义js");
+        console.error(e);
+    }
+</script>
+
+
+
+</body>
+</html><!--html end-->
+  	<!-- / footer -->
+
+
