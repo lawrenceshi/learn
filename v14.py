@@ -32,4 +32,4 @@ print('利润:',ydq-sdq)
 print(ydq)
 print(sdq)
 llpdq = 0.1* bj
-print('理论亏',0.5*0.9+0.5*(-1))
+print('理论亏',0.5*0.8+0.5*(-1))
