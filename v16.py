@@ -4,8 +4,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 #本金
 
-#bj=int(input('本金:'))
-bj=100000
+times = [1,10,50,100,500,1000,5000,10000,50000,100000]
+#times=int(input('本金:'))
+#times=100000
 
 def flip_coin_raitio(N):
 
@@ -42,15 +43,28 @@ def flip_coin_raitio(N):
     return [six*2+three*1, two*1.0+five*1.0+one*1.0+four*1.0]
 
 #ydq=赢的钱,sdq=输的钱
-ydq,sdq= flip_coin_raitio(bj)
+ydq = []
+sdq = []
+zgl = []
+for i in times:
+    flip = flip_coin_raitio(i)
+    ydq.append(flip[0])
+    sdq.append(flip[1]) 
+    lr = flip[0]-flip[1]
+    print('利润:',lr)
+    gl = lr/i
+    zgl.append(gl)
+    print("概率：",gl)
 
-lr = ydq-sdq
-print('利润:',lr)
+    print(ydq)
+    print(sdq)
 
-print("概率：",lr/bj)
+llkdq =[(1/6) * 2 + (1/6) * 1 + ((1/6) * (-1) *4)]*len(times)
+print(llkdq)
 
-print(ydq)
-print(sdq)
-#llkdq=理论亏的钱
-llkdq = 0.167 * 2 + 0.167 * 1 + (0.167 * (-1) *4)
-print('理论亏', llkdq)
+plt.figure(figsize=(8, 5))
+plt.plot(times, zgl, color='blue', marker = "o")
+plt.plot(times, llkdq, color='red', linestyle='-') # 画一条标准0.5的线
+plt.grid(True)
+plt.show()
+
