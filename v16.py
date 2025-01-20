@@ -4,7 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 #本金
 
-times = [1,10,50,100,500,1000,5000,10000,50000,100000]
+#times = [1,10,50,100,500,1000,5000,10000,50000,100000]
+times = np.arange(2, 10000, 100)
 #times=int(input('本金:'))
 #times=100000
 
